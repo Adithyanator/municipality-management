@@ -1,13 +1,23 @@
-# Team ownership
-
-/frontend/ @member-1-frontend-ui
-/frontend/src/pages/ @member-1-frontend-ui
-/frontend/src/components/ @member-1-frontend-ui
-
-/backend/ @member-2-backend-database
-/database/ @member-2-backend-database
-
-/ai-services/ @member-3-ai-computer-vision
-
-/docs/ @member-1-frontend-ui @member-2-backend-database @member-3-ai-computer-vision
-
+# Team ownership reference
+#
+# GitHub CODEOWNERS requires GitHub usernames, team slugs, or email addresses.
+# Actual GitHub handles were not provided, so this file records ownership as
+# comments until the repository administrator maps members to GitHub accounts.
+#
+# Minha Palakkathodi - SRS Architecture Lead
+#   Owns: docs/01-SRS/
+#
+# Adithyan N - Security Architecture Lead
+#   Owns: docs/03-Security-Architecture/, docs/10-Risk-Management/
+#
+# Fathima Hana - Database Architecture Lead
+#   Owns: database/, docs/04-Database-Architecture/
+#
+# Muhammad Sanish - API Architecture Lead
+#   Owns: backend/, docs/05-API-Architecture/
+#
+# Fadi Ahmed - UI/Frontend Architecture Lead
+#   Owns: frontend/, docs/06-UI-Architecture/
+#
+# Muhammed Sadik KT - AI Architecture Lead
+#   Owns: ai-services/, docs/07-AI-Architecture/

@@ -6,7 +6,9 @@ Store AI architecture documentation for Gemini chatbot integration, RAG, guardra
 
 ## Owner
 
-Member 3 - AI/Computer Vision.
+Muhammed Sadik KT - AI Architecture Lead.
+
+Review support: Muhammad Sanish for backend integration, Fathima Hana for AI database collections, and Adithyan N for AI security, biometric privacy, and audit controls.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Member 3 - AI/Computer Vision.
 ## Completion Status
 
 Initialized. The approved AI architecture is currently stored in `docs/architecture/ai/`.
-

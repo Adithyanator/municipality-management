@@ -34,9 +34,12 @@ kottakkal/
 
 ## Team Responsibilities
 
-- Member 1 - Frontend/UI: owns `frontend/`, `frontend/src/pages/`, and `frontend/src/components/`.
-- Member 2 - Backend/Database: owns `backend/` and `database/`.
-- Member 3 - AI/Computer Vision: owns `ai-services/`.
+- Minha Palakkathodi - SRS Architecture Lead: owns SRS documentation and requirements traceability.
+- Adithyan N - Security Architecture Lead: owns security architecture, access control, and risk review.
+- Fathima Hana - Database Architecture Lead: owns MongoDB Atlas database architecture and data governance documentation.
+- Muhammad Sanish - API Architecture Lead: owns backend/API architecture and integration contracts.
+- Fadi Ahmed - UI/Frontend Architecture Lead: owns frontend route, portal, and UI architecture documentation.
+- Muhammed Sadik KT - AI Architecture Lead: owns Gemini chatbot, RAG, and face recognition architecture documentation.
 
 See `TEAM_STRUCTURE.md` for detailed ownership.
 

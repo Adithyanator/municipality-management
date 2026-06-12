@@ -6,7 +6,14 @@ Store system-wide architecture documentation covering frontend, backend, AI serv
 
 ## Owner
 
-Senior Solution Architect / Technical Project Lead.
+Shared architecture ownership by all architecture leads:
+
+- Minha Palakkathodi - SRS Architecture Lead
+- Adithyan N - Security Architecture Lead
+- Fathima Hana - Database Architecture Lead
+- Muhammad Sanish - API Architecture Lead
+- Fadi Ahmed - UI/Frontend Architecture Lead
+- Muhammed Sadik KT - AI Architecture Lead
 
 ## Expected Deliverables
 
@@ -18,4 +25,3 @@ Senior Solution Architect / Technical Project Lead.
 ## Completion Status
 
 Initialized. Existing approved architecture documents remain available under `docs/architecture/`.
-

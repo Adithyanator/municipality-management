@@ -6,7 +6,7 @@ Store meeting minutes, review notes, action items, and project decision summarie
 
 ## Owner
 
-Technical Project Lead.
+Shared responsibility across all architecture leads. Meeting coordination should identify the responsible lead for each action item.
 
 ## Expected Deliverables
 
@@ -18,4 +18,3 @@ Technical Project Lead.
 ## Completion Status
 
 Initialized. Meeting minutes will be added as project coordination proceeds.
-

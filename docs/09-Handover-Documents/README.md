@@ -6,7 +6,7 @@ Store final handover materials for municipality officials, technical maintainers
 
 ## Owner
 
-Technical Project Lead, with inputs from all members.
+Shared responsibility across all architecture leads, with each lead contributing handover notes for their architecture area.
 
 ## Expected Deliverables
 
@@ -18,4 +18,3 @@ Technical Project Lead, with inputs from all members.
 ## Completion Status
 
 Initialized. Handover documents will be prepared near project completion.
-

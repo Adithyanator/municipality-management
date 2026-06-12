@@ -6,7 +6,9 @@ Store API architecture documentation for Node.js/Express backend endpoints, midd
 
 ## Owner
 
-Member 2 - Backend/Database.
+Muhammad Sanish - API Architecture Lead.
+
+Review support: Fathima Hana for database contracts, Adithyan N for API security, Fadi Ahmed for frontend API usage, and Muhammed Sadik KT for AI service integration.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Member 2 - Backend/Database.
 ## Completion Status
 
 Initialized. API implementation documentation will be added during backend design and development.
-

@@ -6,7 +6,9 @@ Store MongoDB Atlas database architecture, schema planning, collection documenta
 
 ## Owner
 
-Member 2 - Backend/Database.
+Fathima Hana - Database Architecture Lead.
+
+Review support: Muhammad Sanish for API integration, Adithyan N for database security, and Muhammed Sadik KT for AI/vector-search data requirements.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Member 2 - Backend/Database.
 ## Completion Status
 
 Initialized. The approved database architecture is currently stored in `database/architecture/` and `docs/architecture/database/`.
-

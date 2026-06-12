@@ -6,7 +6,9 @@ Store project, security, privacy, AI, biometric, operational, and delivery risk 
 
 ## Owner
 
-Technical Project Lead and Security Architect.
+Adithyan N - Security Architecture Lead.
+
+Review support: all architecture leads provide risk inputs for their owned areas.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Technical Project Lead and Security Architect.
 ## Completion Status
 
 Initialized. Risk artifacts will be added as project reviews progress.
-

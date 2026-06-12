@@ -6,7 +6,9 @@ Store security, access control, privacy, audit, risk, and compliance architectur
 
 ## Owner
 
-Security Architect, with support from Member 2 for backend/database controls and Member 3 for AI/biometric controls.
+Adithyan N - Security Architecture Lead.
+
+Review support: Fathima Hana for database controls, Muhammad Sanish for API controls, Fadi Ahmed for frontend access controls, and Muhammed Sadik KT for AI/biometric controls.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Security Architect, with support from Member 2 for backend/database controls and
 ## Completion Status
 
 Initialized. The approved security architecture document is currently stored in `docs/architecture/security/`.
-

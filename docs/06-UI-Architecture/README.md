@@ -6,7 +6,9 @@ Store UI and frontend architecture documentation for React routes, portal segreg
 
 ## Owner
 
-Member 1 - Frontend/UI.
+Fadi Ahmed - UI/Frontend Architecture Lead.
+
+Review support: Minha Palakkathodi for SRS alignment, Adithyan N for frontend security controls, Muhammad Sanish for API contract alignment, and Muhammed Sadik KT for chatbot and attendance UI integration.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Member 1 - Frontend/UI.
 ## Completion Status
 
 Initialized. The approved frontend architecture is currently stored in `docs/architecture/frontend/`.
-

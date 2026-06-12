@@ -6,7 +6,9 @@ Store the approved Software Requirements Specification and all future controlled
 
 ## Owner
 
-Member 1, Member 2, and Member 3 jointly review; primary coordination by the Technical Project Lead.
+Minha Palakkathodi - SRS Architecture Lead.
+
+Review support: Adithyan N for security requirements, Fathima Hana for database requirements, Muhammad Sanish for API requirements, Fadi Ahmed for UI/frontend requirements, and Muhammed Sadik KT for AI requirements.
 
 ## Expected Deliverables
 
@@ -18,4 +20,3 @@ Member 1, Member 2, and Member 3 jointly review; primary coordination by the Tec
 ## Completion Status
 
 Initialized. Approved SRS is currently stored in `docs/srs/`; future organized copies or revisions should be placed here.
-
