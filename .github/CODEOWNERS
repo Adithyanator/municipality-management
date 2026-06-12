@@ -1,0 +1,13 @@
+# Team ownership
+
+/frontend/ @member-1-frontend-ui
+/frontend/src/pages/ @member-1-frontend-ui
+/frontend/src/components/ @member-1-frontend-ui
+
+/backend/ @member-2-backend-database
+/database/ @member-2-backend-database
+
+/ai-services/ @member-3-ai-computer-vision
+
+/docs/ @member-1-frontend-ui @member-2-backend-database @member-3-ai-computer-vision
+
