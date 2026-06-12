@@ -17,14 +17,14 @@ Reference Baseline:
 
 The reviewed security governance documents are directionally aligned with the approved Security & Access Control Architecture. They correctly cover major risk areas including data breach, unauthorized access, insider misuse, privilege escalation, ransomware, DDoS, AI hallucination, face recognition error, backup failure, and municipality handover risk.
 
-The drafts are suitable as version `0.9` governance documents, but they should be strengthened before final handover or architecture freeze. The main gaps are missing detailed municipality operations risks, incomplete API-specific security controls while API Architecture is pending, limited backup evidence requirements, incomplete privacy treatment for Aadhaar hash and public/private file tracking, and handover gaps around credentials, runbooks, support SLAs, and administrative acceptance sign-off.
+The drafts are suitable as version `0.9` governance documents, but they should be strengthened before final handover or architecture freeze. The main gaps are missing detailed municipality operations risks, API-specific security controls that require formal review against the API Architecture baseline, limited backup evidence requirements, incomplete privacy treatment for Aadhaar hash and public/private file tracking, and handover gaps around credentials, runbooks, support SLAs, and administrative acceptance sign-off.
 
 ## Findings
 
 | ID | Area | Finding | Severity | Recommended Improvement |
 | --- | --- | --- | --- | --- |
 | F-001 | Municipality-specific risks | The risk register covers general security and operational risks but does not explicitly list municipality-specific public-service continuity risks such as ward/department misrouting, complaint SLA breach, citizen service transparency failure, certificate/permit workflow delay, or public file tracking misinformation. | Medium | Add risks for department assignment error, SLA breach, incorrect public tracking status, permit/certificate processing delay, and citizen notification failure. Assign owners based on SRS, API, database, and UI responsibilities. |
-| F-002 | API Architecture dependency | Several documents note that API Architecture is pending, but the threat model and risk register do not fully isolate risks caused by undefined API contracts. | High | Add a specific high-priority risk for incomplete API authorization contracts, covering endpoint-level RBAC, object ownership, department scope, report export restrictions, attendance endpoints, AI tool-call endpoints, and file upload/download endpoints. |
+| F-002 | API Architecture dependency | The API Architecture baseline is now present, but the threat model and risk register still need formal review against its endpoint contracts. | High | Add a specific high-priority risk for incomplete API authorization contracts, covering endpoint-level RBAC, object ownership, department scope, report export restrictions, attendance endpoints, AI tool-call endpoints, and file upload/download endpoints. |
 | F-003 | Missing CAPTCHA/public abuse control | The approved Security Architecture recommends CAPTCHA for public abuse prevention where needed. The draft risk register and threat model mention rate limiting but do not include CAPTCHA or bot-abuse controls for registration, password reset, chatbot, complaint submission, or public file tracking. | Medium | Add bot-abuse controls: CAPTCHA where abuse is observed, IP monitoring, per-endpoint throttling, and abuse telemetry for public routes. |
 | F-004 | Missing CSRF and secure cookie detail | The approved Security Architecture includes CSRF protection where cookie-authenticated APIs are used, and secure cookies/token handling. The draft threat model does not explicitly include CSRF or token storage risk. | Medium | Add CSRF, token theft, refresh-token replay, and insecure browser storage as explicit threats and controls. Include SameSite, HttpOnly, Secure cookies where applicable. |
 | F-005 | Incomplete audit-event coverage | The drafts mention audit logging but do not enumerate all approved audit events such as route access violations, system settings changes, knowledge base publish/archive, data exports, role changes, permission changes, biometric consent revocation, and face template deletion. | Medium | Add an audit coverage checklist aligned with the approved Security Architecture event list. |
@@ -58,7 +58,7 @@ The drafts are suitable as version `0.9` governance documents, but they should b
 
 ### Immediate Updates Before Handover
 
-- Add explicit API authorization and endpoint-contract risks while API Architecture remains pending.
+- Add explicit API authorization and endpoint-contract risks during formal review of the API Architecture baseline.
 - Add credential-transfer, credential-rotation, and developer-access revocation steps to the handover checklist.
 - Add backup integrity, backup immutability/offsite protection, and restore evidence template to the backup plan.
 - Add Aadhaar hash handling and OCR extracted-text retention to the privacy policy.

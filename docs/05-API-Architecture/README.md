@@ -19,4 +19,6 @@ Review support: Fathima Hana for database contracts, Adithyan N for API security
 
 ## Completion Status
 
-Initialized. API implementation documentation will be added during backend design and development.
+API architecture baseline added in `API_Architecture_DB_Aligned_v1.0.md`.
+
+The baseline compares the MongoDB v4.0 database architecture with the previously initialized API folder and defines the required Node.js/Express API modules, endpoint groups, middleware boundaries, access-control contracts, validation standards, audit requirements, and implementation order.

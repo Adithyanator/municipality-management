@@ -7,6 +7,7 @@
 | `SRS_AI_Powered_Municipality_Management_Portal_Updated.docx` | DOCX | `docs/srs/` | `docs/01-SRS/` | Minha Palakkathodi - SRS Architecture Lead | Found and copied |
 | `Security_Access_Control_Architecture_Document.md` | Markdown | `docs/architecture/security/` | `docs/03-Security-Architecture/` | Adithyan N - Security Architecture Lead | Found and copied |
 | `SmartCity_DB_Architecture_v4.0_AI_Extension_Updated.md` | Markdown | `docs/architecture/database/` | `docs/04-Database-Architecture/` | Fathima Hana - Database Architecture Lead | Found and copied |
+| `API_Architecture_DB_Aligned_v1.0.md` | Markdown | `docs/05-API-Architecture/` | `docs/05-API-Architecture/` | Muhammad Sanish - API Architecture Lead | Baseline created; pending formal review |
 | `Frontend_Architecture_Final_Merged_Updated.pdf` | PDF | `docs/architecture/frontend/` | `docs/06-UI-Architecture/` | Fadi Ahmed - UI/Frontend Architecture Lead | Found and copied |
 | `AI_Architecture_Final_Submission_Updated.pdf` | PDF | `docs/architecture/ai/` | `docs/07-AI-Architecture/` | Muhammed Sadik KT - AI Architecture Lead | Found and copied |
 
@@ -25,13 +26,12 @@
 
 | Missing Document | Expected Standardized Location | Responsible Owner | Dependency Status |
 | --- | --- | --- | --- |
-| API Architecture | `docs/05-API-Architecture/` | Muhammad Sanish - API Architecture Lead | Depends on approved SRS, security architecture, database architecture, frontend API needs, and AI service integration boundaries. |
 | Backend Architecture | `docs/02-System-Architecture/` or `docs/05-API-Architecture/` | Muhammad Sanish - API Architecture Lead | Depends on API module planning, authentication/RBAC design, database repositories, queues, integrations, and service boundaries. |
 | Master Architecture | `docs/02-System-Architecture/` | Shared architecture leads | Depends on SRS, security, database, frontend/UI, API/backend, and AI architecture consolidation. |
 
 ## Current Gaps Before Architecture Consolidation
 
-- `docs/05-API-Architecture/` has only README and `.gitkeep`; no approved API Architecture document is present.
+- `docs/05-API-Architecture/` now contains `API_Architecture_DB_Aligned_v1.0.md`; formal review and approval are still pending.
 - `docs/architecture/backend/` has only `.gitkeep`; no approved Backend Architecture document is present.
 - `docs/02-System-Architecture/` has only README and `.gitkeep`; no Master Architecture document is present.
 

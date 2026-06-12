@@ -35,7 +35,7 @@ This checklist defines the minimum handover package required for municipality of
 - [ ] AI Architecture available in `docs/07-AI-Architecture/`.
 - [ ] Document inventory and structure map reviewed.
 - [ ] Pending documents list reviewed.
-- [ ] API Architecture status explained as pending.
+- [ ] API Architecture baseline shared; formal review status explained as pending.
 
 ## Security Configuration Handover
 
@@ -86,5 +86,5 @@ This checklist defines the minimum handover package required for municipality of
 - [ ] Documentation update process agreed.
 - [ ] Backup verification owner assigned.
 - [ ] Security review owner assigned.
-- [ ] Pending API Architecture owner confirmed.
+- [ ] Pending API Architecture formal review owner confirmed.
 
