@@ -98,4 +98,3 @@ Approved documents are stored under:
 - `docs/architecture/security/`
 - `database/architecture/`
 - `docs/reports/`
-
