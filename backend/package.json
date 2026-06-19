@@ -4,7 +4,9 @@
   "private": true,
   "description": "Node.js backend workspace for the AI-powered smart municipal citizen assistance and staff attendance management system.",
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "mammoth": "^1.12.0",
+    "mongodb": "^7.3.0",
+    "pdf-parse": "^2.4.5"
+  }
 }
-
