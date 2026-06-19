@@ -1,7 +1,7 @@
 # Implementation Task Breakdown
 
 **Project:** AI-Powered Smart Municipal Citizen Assistance and Staff Attendance Management System  
-**Version:** 1.1  
+**Version:** 1.2  
 **Status:** Rapid MVP Development Plan Approved  
 **Author:** Technical Lead & Project Manager  
 
@@ -24,8 +24,9 @@ The project follows a **Database-First / API-First approach** with a focus on **
   1. Security (Non-negotiable)
   2. Working Features
   3. Integration
-  4. UI Polish
-  5. Additional Features
+  4. Stability
+  5. UI Polish
+  6. Additional Features
 
 ---
 
@@ -41,8 +42,8 @@ The following features must be fully completed and secured within the 1-week tim
 * **Staff Dashboard:** Workspace for municipal employees to view check-ins and task assignments.
 * **Attendance System:** Consent recording and biometric facial recognition check-in (with manual fallback).
 * **Admin Dashboard:** Console for user audits, SLA deadline parameters, and settings.
-* **AI Chatbot (Basic MVP):** Gemini-grounded query responding using RAG over the municipal knowledge base.
-* **OCR (Basic MVP):** Processing citizen document attachments for metadata verification.
+* **Basic AI Chatbot:** Gemini-grounded query responding using RAG over the municipal knowledge base.
+* **Basic OCR:** Processing citizen document attachments for metadata verification.
 * **Notifications:** Dispatch of toast notifications and database-logged alerts.
 * **Audit Logging:** Secure transactional log registry for security events.
 
@@ -54,11 +55,11 @@ The following features must be fully completed and secured within the 1-week tim
 
 The following high-complexity modules are deferred to Phase 2 to ensure timely delivery of the core system:
 * **Advanced Analytics:** Dynamic charts plotting department workload analytics and historic timelines.
-* **Complex Report Exports:** High-volume CSV/PDF report query filters and export queue managers.
+* **Complex Reports:** High-volume CSV/PDF report query filters and export queue managers.
 * **Advanced AI Features:** Automated workflow classifications or intent routing pipelines outside RAG.
-* **Multi-language Voice Assistant:** Auditory interfaces and local language translation frameworks.
-* **Advanced Scheme Recommendation Engine:** Machine-learning-based matching of citizen profiles to municipal benefits.
-* **Complex Workflow Automations:** Automated multi-department document approvals and escalation triggers.
+* **Voice Assistant:** Multi-language auditory interfaces and local language translation frameworks.
+* **Recommendation Engine:** Machine-learning-based matching of citizen profiles to municipal benefits.
+* **Workflow Automation:** Automated multi-department document approvals and escalation triggers.
 
 ---
 
@@ -86,31 +87,33 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 ## 5. Team Member Responsibilities
 
-* **Minha Palakkathodi (Requirements, Documentation, Quality Assurance):**
-  - Owns SRS requirements validation and traceability mapping.
-  - Documents test cases, reviews audit logging layouts, and coordinates user acceptance testing (UAT).
-* **Adithyan N (Frontend Lead, Security Review, Project Coordinator):**
-  - **Main Frontend Implementer:** Builds React views, Tailwind styles, state managers, and webcam scanner frames.
-  - **Database Support:** Assists with additional schema implementation when required and helps complete remaining MongoDB collections.
-  - Conducts code reviews, enforces CSRF UI settings, and monitors project deadlines.
-* **Fathima Hana (Database Developer):**
-  - Owns core database schema design, validations, indices, and time-series settings.
-  - Conducts database reviews and reviews mongoose models.
-* **Muhammad Sanish (Backend / API Developer):**
+* **Minha Palakkathodi (Documentation Lead + QA Lead):**
+  - Owns SRS requirements validation, database validations, and requirements traceability.
+  - Documents test cases, reviews audit logging layouts, coordinates user acceptance testing (UAT), tracks security checklists, prepares handover manuals, and drafts daily testing reports.
+* **Adithyan N (Frontend Lead + Project Coordinator):**
+  - **Owns the ENTIRE React Frontend:** Builds React views, Tailwind styles, state managers, webcam scanner frames, and protected route rules.
+  - Implements the Authentication UI, Citizen Portal UI, Staff Dashboard UI, Admin Dashboard UI, Complaint UI, File Tracking UI, Feedback UI, Attendance UI, and Chatbot UI.
+  - Enforces frontend security checks and manages integration coordination and daily integration reviews.
+  - **Additional Database Support:** Assists Fathima Hana in database/Mongoose schema implementation if database workload becomes high.
+* **Fathima Hana (Database Lead):**
+  - Owns core database schema designs, validations, indexing, collection relationships, database audits/reviews, and query optimizations.
+* **Muhammad Sanish (Backend Lead):**
   - Owns Express server initialization, API controllers, JWT auth routes, and RBAC authorization middlewares.
-  - Configures secure cookie transports, input sanitation parameters, and export logic.
-* **Fadi Ahmed (UI Support, Testing Developer):**
-  - Creates modular React layout shells, tests client routing behaviors, and checks Tailwind design consistency.
-  - Conducts cross-browser visual validations and assists with frontend foundation tasks.
-* **Muhammed Sadik KT (AI & Biometric Service Developer):**
-  - Implements the Python biometric face-matching and liveness comparison module.
-  - Configures Gemini prompt orchestrations, Vector Search indexing scripts, and OCR parsing APIs.
+  - Configures secure cookie transports, input sanitation parameters, audit logging controllers, backend security check middlewares, API documentation, and integration support.
+* **Fadi Ahmed (Face Recognition Support + Testing Lead):**
+  - Coordinates prototype refinements of face recognition, camera integration, webcam scanner overlays, and dataset collections.
+  - Focuses on camera permission testing, cross-browser camera testing, responsive layouts testing, system integration testing, and UI consistency review.
+  - Enforces attendance workflow testing and face recognition accuracy testing.
+  - Works closely with Muhammed Sadik KT.
+* **Muhammed Sadik KT (AI Lead):**
+  - Owns the core implementation of the Python biometric face-matching and liveness comparison module.
+  - Configures Gemini prompt orchestrations, Vector Search indexing scripts, OCR parsing APIs, AI testing, and chatbot prompt optimizations.
 
 ---
 
 ## 6. Rapid MVP Development Plan (1 Week)
 
-### 6.1 Sprint 0: Foundation Prep (Duration: 1 Day)
+### 6.1 Sprint 0: Foundation Prep (Duration: Half Day)
 * **Goal:** Confirm environments, initialize branch structures, and deploy linting guidelines.
 * **Tasks:** Repository verification, local node environment setups, Git branching rules configuration, ESLint/Prettier rules, environment variables (`.env.example`) deployments, and MongoDB Atlas database instance creations.
 
@@ -119,15 +122,15 @@ To prevent database bottleneck issues, only the following **14 collections** are
   - Initialize the backend Express engine, build core schemas (14 mandatory collections), scaffold the React app structure, configure routing guards, and set up infrastructure adapters.
 * **Day 2: Core Citizen Services**
   - Develop user registration/login controllers, JWT middlewares, citizen portal grids, and complaint registration API.
-* **Day 3: Continue Core Services + Integration**
+* **Day 3: Core Integration**
   - Implement file tracking lookup services, upload pipelines, notification logs, citizen forms styling, and frontend-to-backend integrations.
-* **Day 4: Municipality Operations + AI Integration**
+* **Day 4: Municipality Operations + AI**
   - Construct staff Kanban dashboard, biometric consent forms, Python face matching service, and Gemini RAG chatbot adaptors.
-* **Day 5: Feature Completion + Integration**
+* **Day 5: Feature Completion**
   - Complete AI reviews queue controllers, OCR attachment parsers, admin configuration panels, and final frontend-to-backend views linkages.
-* **Day 6: Full System Integration + Bug Fixing (Feature Freeze)**
+* **Day 6: Integration Day (Feature Freeze)**
   - *No new features allowed.* All developers halt active coding on new modules. Focused exclusively on end-to-end integration reviews, visual styling repairs, and debugging database queries.
-* **Day 7: Security Review + Testing + Deployment Preparation**
+* **Day 7: Final Delivery**
   - Execute pen-testing scripts, evaluate RBAC route protections, run liveness threshold tests, clear local cache files, set S3 immutability rules, and configure production builds.
 
 ---
@@ -178,7 +181,7 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 #### TASK-FE-INF-001
 * **Task:** Global Layout & Theme Setup
-* **Assigned To:** Adithyan N + Fadi Ahmed
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/components/layout/`
 * **Depends On:** None
 * **Deliverable:** Main React layout wrappers utilizing Tailwind grid alignments.
@@ -188,7 +191,7 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 #### TASK-FE-INF-002
 * **Task:** Sidebar & Navbar Navigation
-* **Assigned To:** Adithyan N + Fadi Ahmed
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/components/navigation/`
 * **Depends On:** TASK-FE-INF-001
 * **Deliverable:** Dashboard headers and sidebar menus containing link directories.
@@ -198,7 +201,7 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 #### TASK-FE-INF-003
 * **Task:** Protected Routes Gating
-* **Assigned To:** Adithyan N + Fadi Ahmed
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/components/guards/`
 * **Depends On:** TASK-FE-INF-001
 * **Deliverable:** Route guard wrappers checking active user tokens and role sets.
@@ -208,7 +211,7 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 #### TASK-FE-INF-004
 * **Task:** Axios Client & API Interceptors
-* **Assigned To:** Adithyan N + Fadi Ahmed
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/api/`
 * **Depends On:** None
 * **Deliverable:** Configured Axios instance with auto-injected authorization header interceptors.
@@ -218,7 +221,7 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 #### TASK-FE-INF-005
 * **Task:** Loading Components & Error Boundaries
-* **Assigned To:** Adithyan N + Fadi Ahmed
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/components/common/`
 * **Depends On:** TASK-FE-INF-001
 * **Deliverable:** Loading screens and boundary classes catching React runtime exceptions.
@@ -228,7 +231,7 @@ To prevent database bottleneck issues, only the following **14 collections** are
 
 #### TASK-FE-INF-006
 * **Task:** Toast Notifications & Reusable UI Components
-* **Assigned To:** Adithyan N + Fadi Ahmed
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/components/ui/`
 * **Depends On:** TASK-FE-INF-001
 * **Deliverable:** Alert toasts, buttons, form grids, and select dropdown elements.
@@ -294,6 +297,16 @@ To prevent database bottleneck issues, only the following **14 collections** are
 * **Deliverable:** Complete matrix linking requirements to database schemas and APIs.
 * **Security:** Review authentication workflow consistency.
 * **Testing:** Verification reviews.
+* **Status:** Not Started
+
+#### TASK-UI-001
+* **Task:** Design Portal Layout Shells review
+* **Assigned To:** Adithyan N (implementation) + Fadi Ahmed (design review)
+* **Path:** `frontend/src/components/layout/`
+* **Depends On:** TASK-FE-INF-001
+* **Deliverable:** Responsive layout consistency review for core screen elements.
+* **Security:** Ensure clear role segregation on rendering views.
+* **Testing:** Visual checking of navigation tabs responsiveness.
 * **Status:** Not Started
 
 ---
@@ -475,12 +488,12 @@ To prevent database bottleneck issues, only the following **14 collections** are
 * **Status:** Not Started
 
 #### TASK-UI-003
-* **Task:** Build Scanner Webcam permission components
-* **Assigned To:** Fadi Ahmed
+* **Task:** Build Scanner Webcam permission UI components
+* **Assigned To:** Adithyan N
 * **Path:** `frontend/src/components/scanner/`
 * **Depends On:** TASK-FE-005
-* **Deliverable:** Browser webcam gate components with fallback manual check-ins.
-* **Security:** Check image storage configurations to ensure zero persistence.
+* **Deliverable:** Camera access prompt modules with visual fallback settings.
+* **Security:** Handle camera lockouts or permissions denials safely.
 * **Testing:** Webcam denial shows PIN manual inputs immediately.
 * **Status:** Not Started
 
@@ -494,8 +507,8 @@ To prevent database bottleneck issues, only the following **14 collections** are
 * **Path:** `backend/src/middlewares/security.js`
 * **Depends On:** TASK-BE-001
 * **Deliverable:** Input sanitizers blocking operator injections.
-* **Security:** Reject requests containing `$`, `.` characters in queries.
-* **Testing:** Verify NoSQL injection attempts return 400.
+* **Security:** Strip special operators (`$`, `.`) from request parameters.
+* **Testing:** Verify POST payloads containing MongoDB operators are rejected.
 * **Status:** Not Started
 
 #### TASK-BE-009
@@ -539,12 +552,12 @@ To prevent database bottleneck issues, only the following **14 collections** are
 * **Status:** Not Started
 
 #### TASK-UI-004
-* **Task:** Cross-browser layout verification
+* **Task:** Run Cross-Browser Layout Verification
 * **Assigned To:** Fadi Ahmed
 * **Path:** `frontend/`
 * **Depends On:** TASK-FE-007
-* **Deliverable:** Visual audits log.
-* **Security:** Grid bounds checks.
+* **Deliverable:** Browser compatibility report.
+* **Security:** CSS layout bounds checks.
 * **Testing:** Verify layouts render correctly in Firefox, Safari, and Chrome.
 * **Status:** Not Started
 
@@ -556,6 +569,80 @@ To prevent database bottleneck issues, only the following **14 collections** are
 * **Deliverable:** S3 Object Lock configuration scripts.
 * **Security:** Tamper-proof backup configurations.
 * **Testing:** Check simulated delete commands.
+* **Status:** Not Started
+
+---
+
+### 7.5 Face Recognition Core Tasks (Assigned: Fadi Ahmed)
+
+#### TASK-FR-001
+* **Task:** Dataset Collection
+* **Assigned To:** Fadi Ahmed
+* **Path:** `ai-services/face-rec/dataset/`
+* **Depends On:** None
+* **Deliverable:** Standardized library of staff face profile datasets for calibration.
+* **Security:** Zero storage of raw images in public repos; restricted access only.
+* **Testing:** Verify alignment metrics of gathered sample set.
+* **Status:** Not Started
+
+#### TASK-FR-002
+* **Task:** Prototype Refinement
+* **Assigned To:** Fadi Ahmed
+* **Path:** `ai-services/face-rec/`
+* **Depends On:** TASK-AI-001
+* **Deliverable:** Optimized comparison model utilizing optimized landmarks matrices.
+* **Security:** Protection against offline model extraction.
+* **Testing:** Run validation accuracy tests against sample sets.
+* **Status:** Not Started
+
+#### TASK-FR-003
+* **Task:** Camera Integration Testing
+* **Assigned To:** Fadi Ahmed
+* **Path:** `frontend/src/components/scanner/`
+* **Depends On:** TASK-UI-003
+* **Deliverable:** Gated webcam framework integration report.
+* **Security:** webcam parameters verification, checking zero buffer persistences.
+* **Testing:** Check camera feed binding logic.
+* **Status:** Not Started
+
+#### TASK-FR-004
+* **Task:** Attendance Workflow Testing
+* **Assigned To:** Fadi Ahmed
+* **Path:** `docs/reports/`
+* **Depends On:** TASK-BE-006, TASK-FR-003
+* **Deliverable:** Verification test log tracing biometric punch inputs to model outcomes.
+* **Security:** Confirm active consent checks block unconsented camera captures.
+* **Testing:** Attempt punches under blocked consent rules.
+* **Status:** Not Started
+
+#### TASK-FR-005
+* **Task:** Recognition Accuracy Testing
+* **Assigned To:** Fadi Ahmed
+* **Path:** `docs/reports/`
+* **Depends On:** TASK-FR-002
+* **Deliverable:** Metrics summary documenting False Acceptance Rate (FAR) and False Rejection Rate (FRR).
+* **Security:** Mitigate spoofing risk from static print templates.
+* **Testing:** Run model against mock spoofing inputs.
+* **Status:** Not Started
+
+#### TASK-FR-006
+* **Task:** Cross-Browser Camera Testing
+* **Assigned To:** Fadi Ahmed
+* **Path:** `docs/reports/`
+* **Depends On:** TASK-FR-003
+* **Deliverable:** Browser compatibility log for camera access.
+* **Security:** camera permissions sandbox restrictions validation.
+* **Testing:** Run webcam scans across Chrome, Edge, Safari, and Firefox.
+* **Status:** Not Started
+
+#### TASK-FR-007
+* **Task:** System Integration Testing
+* **Assigned To:** Fadi Ahmed
+* **Path:** `docs/reports/`
+* **Depends On:** TASK-FR-004, TASK-FE-005
+* **Deliverable:** End-to-end integration validation report.
+* **Security:** Confirm RBAC blocks staff from viewing other staff biometric logs.
+* **Testing:** Run dry-run cycles.
 * **Status:** Not Started
 
 ---
@@ -676,6 +763,8 @@ To ensure rapid syncs in the 1-week timeline, each team member must report the f
 * **Yesterday:** What tasks were completed yesterday?
 * **Today:** What tasks are being worked on today?
 * **Blockers:** Are there any dependencies or technical roadblocks preventing progress?
+
+**Standup Meeting Duration:** 15 minutes daily.
 
 ---
 
