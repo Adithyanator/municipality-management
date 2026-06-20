@@ -5,5 +5,12 @@
   "workspaces": [
     "frontend",
     "backend"
-  ]
+  ],
+  "scripts": {
+    "frontend:dev": "npm run dev --workspace=kottakkal-frontend",
+    "backend:dev": "npm run dev --workspace=kottakkal-backend",
+    "frontend:build": "npm run build --workspace=kottakkal-frontend",
+    "backend:start": "npm run start --workspace=kottakkal-backend",
+    "lint": "eslint ."
+  }
 }

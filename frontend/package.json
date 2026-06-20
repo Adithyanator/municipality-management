@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "React frontend workspace for the AI-powered smart municipal citizen assistance and staff attendance management system.",
-  "scripts": {},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src"
+  },
   "dependencies": {},
   "devDependencies": {}
 }
