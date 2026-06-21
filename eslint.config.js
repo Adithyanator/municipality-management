@@ -101,5 +101,22 @@ module.exports = [
       'jsx-a11y/alt-text': 'warn',
     },
   },
+  // Allow console statements in setup, seed, migration, config verification, and CLI utility scripts
+  {
+    files: [
+      'backend/server.js',
+      'backend/extract_docs.js',
+      'backend/list_dbs.js',
+      '**/scripts/**/*.js',
+      '**/migrations/**/*.js',
+      '**/seeders/**/*.js',
+      '**/seeds/**/*.js',
+      '**/setup/**/*.js',
+      '**/cli/**/*.js',
+    ],
+    rules: {
+      'no-console': 'off',
+    },
+  },
   eslintConfigPrettier,
 ];
