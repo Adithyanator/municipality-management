@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 __pycache__/
+*.pyc
 .venv/
 venv/
 
@@ -37,4 +38,6 @@ database/backups/*
 !database/backups/.gitkeep
 ai-services/shared/logs/*
 !ai-services/shared/logs/.gitkeep
+backup/
+backups/
 
