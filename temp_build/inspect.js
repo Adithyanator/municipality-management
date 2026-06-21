@@ -8,9 +8,21 @@ async function inspectHeaders() {
 
   const sheetsToInspect = [
     'Dashboard',
-    'Sprint 0', 'Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7',
-    'Backend Tasks', 'Frontend Tasks', 'Database Tasks', 'AI Tasks',
-    'Face Recognition Tasks', 'Documentation & QA Tasks', 'Infrastructure Tasks'
+    'Sprint 0',
+    'Day 1',
+    'Day 2',
+    'Day 3',
+    'Day 4',
+    'Day 5',
+    'Day 6',
+    'Day 7',
+    'Backend Tasks',
+    'Frontend Tasks',
+    'Database Tasks',
+    'AI Tasks',
+    'Face Recognition Tasks',
+    'Documentation & QA Tasks',
+    'Infrastructure Tasks',
   ];
 
   for (const name of sheetsToInspect) {
@@ -26,7 +38,10 @@ async function inspectHeaders() {
     } else {
       headerRow = ws.getRow(2);
     }
-    console.log(`${name} Header:`, headerRow.values.filter(v => v !== null));
+    console.log(
+      `${name} Header:`,
+      headerRow.values.filter((v) => v !== null)
+    );
   }
 }
 

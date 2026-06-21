@@ -87,4 +87,3 @@ This checklist defines the minimum handover package required for municipality of
 - [ ] Backup verification owner assigned.
 - [ ] Security review owner assigned.
 - [ ] Pending API Architecture formal review owner confirmed.
-

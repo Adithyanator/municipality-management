@@ -10,17 +10,17 @@ The API must not allow frontend clients, Gemini, OCR, face-recognition services,
 
 The database architecture contains 42 collections: 26 preserved production collections and 16 added AI/frontend/SRS collections. The previous API folder only documented expected deliverables, so the API architecture needed to be expanded to cover the v4.0 database contract.
 
-| Database area | Required API architecture change |
-| --- | --- |
-| `users`, `roles`, `permissions`, `auth_sessions`, `password_reset_tokens` | Add Auth, Session, RBAC, and Password Reset modules with token hashing, audit logging, and account/session controls. |
-| `complaints`, `complaint_assignments`, `complaint_status_history`, `sla_policies`, `feedback` | Add Complaint, Assignment, Timeline, SLA, and Feedback APIs with citizen ownership, staff department scope, and admin assignment controls. |
-| `file_tracking`, `file_tracking_history` | Add public file tracker and staff/admin file update APIs; public responses must expose only public fields and `public_note`. |
-| `knowledge_base`, `kb_embeddings`, `chatbot_sessions`, `chatbot_messages` | Add AI Gateway and Knowledge Base APIs for Gemini/RAG, approved retrieval, redacted chat logs, prompt metadata, and six-month retention fields. |
-| `ai_human_review_queue`, `notifications` | Add Human Review and Notification APIs for chatbot escalation, low-confidence biometric review, failed liveness, and AI exceptions. |
-| `attendance`, `attendance_summary`, `biometric_consents`, `face_templates`, `staff_presence` | Add Attendance and Biometric APIs with active consent checks, encrypted template references, liveness/confidence validation, manual fallback, and presence upserts. |
-| `files`, `certificates`, `certificate_types`, `properties`, `tax_records`, `payments` | Add File, Certificate, Property, Tax, and Payment APIs with file metadata, access control, and audit records. |
-| `municipal_service_directory`, `announcements` | Add public content APIs for schemes, permits, helplines, downloadable documents, and citizen notices. |
-| `report_exports`, `system_settings`, `audit_logs`, `ai_audit_logs`, `ai_errors` | Add Admin Reporting, Settings, Audit, AI Audit, and AI Error APIs with export tracking, non-secret settings, correlation IDs, and operational monitoring. |
+| Database area                                                                                 | Required API architecture change                                                                                                                                    |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `users`, `roles`, `permissions`, `auth_sessions`, `password_reset_tokens`                     | Add Auth, Session, RBAC, and Password Reset modules with token hashing, audit logging, and account/session controls.                                                |
+| `complaints`, `complaint_assignments`, `complaint_status_history`, `sla_policies`, `feedback` | Add Complaint, Assignment, Timeline, SLA, and Feedback APIs with citizen ownership, staff department scope, and admin assignment controls.                          |
+| `file_tracking`, `file_tracking_history`                                                      | Add public file tracker and staff/admin file update APIs; public responses must expose only public fields and `public_note`.                                        |
+| `knowledge_base`, `kb_embeddings`, `chatbot_sessions`, `chatbot_messages`                     | Add AI Gateway and Knowledge Base APIs for Gemini/RAG, approved retrieval, redacted chat logs, prompt metadata, and six-month retention fields.                     |
+| `ai_human_review_queue`, `notifications`                                                      | Add Human Review and Notification APIs for chatbot escalation, low-confidence biometric review, failed liveness, and AI exceptions.                                 |
+| `attendance`, `attendance_summary`, `biometric_consents`, `face_templates`, `staff_presence`  | Add Attendance and Biometric APIs with active consent checks, encrypted template references, liveness/confidence validation, manual fallback, and presence upserts. |
+| `files`, `certificates`, `certificate_types`, `properties`, `tax_records`, `payments`         | Add File, Certificate, Property, Tax, and Payment APIs with file metadata, access control, and audit records.                                                       |
+| `municipal_service_directory`, `announcements`                                                | Add public content APIs for schemes, permits, helplines, downloadable documents, and citizen notices.                                                               |
+| `report_exports`, `system_settings`, `audit_logs`, `ai_audit_logs`, `ai_errors`               | Add Admin Reporting, Settings, Audit, AI Audit, and AI Error APIs with export tracking, non-secret settings, correlation IDs, and operational monitoring.           |
 
 ## 3. Route Structure
 
@@ -180,20 +180,20 @@ All non-health routes use the same middleware order:
 
 Controllers must stay thin. Business rules belong in services, and MongoDB access belongs behind repositories or model-specific data access functions.
 
-| Service | Owns writes to |
-| --- | --- |
-| Auth Service | `users`, `auth_sessions`, `password_reset_tokens`, `audit_logs` |
-| Complaint Service | `complaints`, `complaint_assignments`, `complaint_status_history`, `feedback`, `notifications` |
-| File Service | `files`, file metadata, signed upload/download decisions |
-| File Tracking Service | `file_tracking`, `file_tracking_history` |
-| Directory Service | `municipal_service_directory`, `announcements` |
-| AI Gateway Service | `chatbot_sessions`, `chatbot_messages`, `ai_audit_logs`, `ai_errors`, `ai_human_review_queue` |
-| Knowledge Service | `knowledge_base`, `kb_embeddings`, source-file links |
-| Attendance Service | `attendance`, `attendance_summary`, `staff_presence`, review queue links |
-| Biometric Service | `biometric_consents`, `face_templates`, biometric audit events |
-| Notification Service | `notifications`, `user_notification_preferences` |
-| Reporting Service | `report_exports`, generated `files`, export audit entries |
-| Settings Service | `system_settings`, settings-change audit entries |
+| Service               | Owns writes to                                                                                 |
+| --------------------- | ---------------------------------------------------------------------------------------------- |
+| Auth Service          | `users`, `auth_sessions`, `password_reset_tokens`, `audit_logs`                                |
+| Complaint Service     | `complaints`, `complaint_assignments`, `complaint_status_history`, `feedback`, `notifications` |
+| File Service          | `files`, file metadata, signed upload/download decisions                                       |
+| File Tracking Service | `file_tracking`, `file_tracking_history`                                                       |
+| Directory Service     | `municipal_service_directory`, `announcements`                                                 |
+| AI Gateway Service    | `chatbot_sessions`, `chatbot_messages`, `ai_audit_logs`, `ai_errors`, `ai_human_review_queue`  |
+| Knowledge Service     | `knowledge_base`, `kb_embeddings`, source-file links                                           |
+| Attendance Service    | `attendance`, `attendance_summary`, `staff_presence`, review queue links                       |
+| Biometric Service     | `biometric_consents`, `face_templates`, biometric audit events                                 |
+| Notification Service  | `notifications`, `user_notification_preferences`                                               |
+| Reporting Service     | `report_exports`, generated `files`, export audit entries                                      |
+| Settings Service      | `system_settings`, settings-change audit entries                                               |
 
 Service methods own transaction boundaries where MongoDB transactions are needed, idempotency decisions for retryable operations, audit log creation, downstream integration calls, and data redaction before controller responses.
 
@@ -289,16 +289,16 @@ Operational details, provider errors, stack traces, raw prompts, secrets, and bi
 
 Error categories:
 
-| HTTP status | Code pattern | Use case |
-| --- | --- | --- |
-| 400 | `VALIDATION_ERROR` | Invalid body, params, query, enum, file type, or confidence score. |
-| 401 | `AUTHENTICATION_REQUIRED` | Missing, expired, invalid, or revoked session token. |
-| 403 | `AUTHORIZATION_DENIED` | Role, permission, ownership, department, or service-scope failure. |
-| 404 | `RESOURCE_NOT_FOUND` | Missing resource or intentionally hidden resource. |
-| 409 | `CONFLICT` | Duplicate unique fields, invalid state transition, or stale update. |
-| 429 | `RATE_LIMITED` | Endpoint throttle exceeded. |
-| 500 | `INTERNAL_ERROR` | Unexpected backend failure with redacted client message. |
-| 502/503 | `INTEGRATION_ERROR` | Gemini, face service, storage, or queue dependency failure. |
+| HTTP status | Code pattern              | Use case                                                            |
+| ----------- | ------------------------- | ------------------------------------------------------------------- |
+| 400         | `VALIDATION_ERROR`        | Invalid body, params, query, enum, file type, or confidence score.  |
+| 401         | `AUTHENTICATION_REQUIRED` | Missing, expired, invalid, or revoked session token.                |
+| 403         | `AUTHORIZATION_DENIED`    | Role, permission, ownership, department, or service-scope failure.  |
+| 404         | `RESOURCE_NOT_FOUND`      | Missing resource or intentionally hidden resource.                  |
+| 409         | `CONFLICT`                | Duplicate unique fields, invalid state transition, or stale update. |
+| 429         | `RATE_LIMITED`            | Endpoint throttle exceeded.                                         |
+| 500         | `INTERNAL_ERROR`          | Unexpected backend failure with redacted client message.            |
+| 502/503     | `INTEGRATION_ERROR`       | Gemini, face service, storage, or queue dependency failure.         |
 
 ## 12. Request/Response Formats
 
@@ -351,16 +351,16 @@ List response example:
 
 The API integrates with these internal and external systems through service-layer adapters:
 
-| Integration | API boundary | Data and control rules |
-| --- | --- | --- |
-| MongoDB Atlas | Repository/model layer | All writes go through services; validators mirror collection rules; indexes support documented access patterns. |
-| Gemini API | AI Gateway Service | Backend-mediated only; prompts, retrieval sources, safety decisions, and failures are logged with redaction. |
-| Atlas Vector Search | Knowledge Service | Uses `kb_embeddings` for approved RAG retrieval; only active embeddings for published allowed content are used. |
+| Integration              | API boundary                      | Data and control rules                                                                                                  |
+| ------------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| MongoDB Atlas            | Repository/model layer            | All writes go through services; validators mirror collection rules; indexes support documented access patterns.         |
+| Gemini API               | AI Gateway Service                | Backend-mediated only; prompts, retrieval sources, safety decisions, and failures are logged with redaction.            |
+| Atlas Vector Search      | Knowledge Service                 | Uses `kb_embeddings` for approved RAG retrieval; only active embeddings for published allowed content are used.         |
 | Face Recognition Service | Biometric and Attendance Services | Requires active consent; raw images are transient; stores encrypted template references and verification metadata only. |
-| File/Object Storage | File Service | Stores metadata in `files`; clients receive signed access only after authorization. |
-| Notification Provider | Notification Service | Creates `notifications` records before dispatch; failures are logged and retryable. |
-| Report Generator | Reporting Service | Creates `report_exports`, generated file records, and audit logs for CSV/PDF exports. |
-| Background Jobs | Internal Service API | Runs retention cleanup, embedding jobs, export cleanup, notification retries, and template deletion workflows. |
+| File/Object Storage      | File Service                      | Stores metadata in `files`; clients receive signed access only after authorization.                                     |
+| Notification Provider    | Notification Service              | Creates `notifications` records before dispatch; failures are logged and retryable.                                     |
+| Report Generator         | Reporting Service                 | Creates `report_exports`, generated file records, and audit logs for CSV/PDF exports.                                   |
+| Background Jobs          | Internal Service API              | Runs retention cleanup, embedding jobs, export cleanup, notification retries, and template deletion workflows.          |
 
 ## 14. API Versioning
 

@@ -2,14 +2,14 @@
 
 ## Review Ownership
 
-| Name | Role | Primary Deliverables | Review Responsibilities |
-| --- | --- | --- | --- |
-| Minha Palakkathodi | SRS Architecture Lead | SRS folder, requirement traceability, scope updates | Reviews all checklist items for approved SRS scope alignment |
-| Adithyan N | Security Architecture Lead | Security architecture, RBAC review, risk-management documentation | Reviews security, privacy, audit, biometric, and AI safety checklist items |
-| Fathima Hana | Database Architecture Lead | Database architecture, schemas, indexes, validation and backup notes | Reviews database, retention, encryption, backup, and data-governance checklist items |
-| Muhammad Sanish | API Architecture Lead | API architecture, backend module contracts, middleware and integration notes | Reviews API, backend, validation, error handling, and integration checklist items |
-| Fadi Ahmed | UI/Frontend Architecture Lead | UI architecture, frontend route map, portal and component documentation | Reviews frontend route, portal, UI, and session workflow checklist items |
-| Muhammed Sadik KT | AI Architecture Lead | AI architecture, chatbot/RAG notes, face recognition workflow notes | Reviews AI Gateway, RAG, guardrail, liveness, matching, fallback, and AI audit checklist items |
+| Name               | Role                          | Primary Deliverables                                                         | Review Responsibilities                                                                        |
+| ------------------ | ----------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Minha Palakkathodi | SRS Architecture Lead         | SRS folder, requirement traceability, scope updates                          | Reviews all checklist items for approved SRS scope alignment                                   |
+| Adithyan N         | Security Architecture Lead    | Security architecture, RBAC review, risk-management documentation            | Reviews security, privacy, audit, biometric, and AI safety checklist items                     |
+| Fathima Hana       | Database Architecture Lead    | Database architecture, schemas, indexes, validation and backup notes         | Reviews database, retention, encryption, backup, and data-governance checklist items           |
+| Muhammad Sanish    | API Architecture Lead         | API architecture, backend module contracts, middleware and integration notes | Reviews API, backend, validation, error handling, and integration checklist items              |
+| Fadi Ahmed         | UI/Frontend Architecture Lead | UI architecture, frontend route map, portal and component documentation      | Reviews frontend route, portal, UI, and session workflow checklist items                       |
+| Muhammed Sadik KT  | AI Architecture Lead          | AI architecture, chatbot/RAG notes, face recognition workflow notes          | Reviews AI Gateway, RAG, guardrail, liveness, matching, fallback, and AI audit checklist items |
 
 ## Scope Control
 

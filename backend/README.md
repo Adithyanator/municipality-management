@@ -3,6 +3,7 @@
 Node.js / Express backend core for the AI-Powered Smart Municipal Citizen Assistance and Staff Attendance Management System.
 
 ## Structure
+
 - `src/routes`: versioned API endpoints routing request traffic.
 - `src/middlewares`: Security, RBAC authentication, validation, and error log routing.
 - `src/controllers`: Maps incoming requests to system service commands, avoiding direct database operations.

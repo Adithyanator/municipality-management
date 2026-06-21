@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+coverage/
+**/coverage/
+
+# Environment and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Logs
+logs/
+**/logs/
+*.log
+**/*.log
+
+# Lockfiles
+package-lock.json
+**/package-lock.json
+
+# Cache files
+__pycache__/
+**/__pycache__/
+*.pyc
+**/*.pyc
+
+# Backups
+backup/
+backups/
+**/backup/
+**/backups/

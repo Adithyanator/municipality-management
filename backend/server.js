@@ -11,4 +11,4 @@
 //   console.log(`Server running on port ${PORT}`);
 // });
 
-console.log("Kottakkal Backend Gateway Initialized (Placeholder)");
+console.log('Kottakkal Backend Gateway Initialized (Placeholder)');

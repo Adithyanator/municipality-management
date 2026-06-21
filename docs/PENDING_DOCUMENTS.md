@@ -2,11 +2,11 @@
 
 The following documents are still required before full architecture consolidation.
 
-| Missing Document | Responsible Owner | Dependency Status |
-| --- | --- | --- |
+| Missing Document               | Responsible Owner                       | Dependency Status                                                                                                                                                                                                                              |
+| ------------------------------ | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | API Architecture formal review | Muhammad Sanish - API Architecture Lead | Baseline created in `docs/05-API-Architecture/API_Architecture_DB_Aligned_v1.0.md`. Pending formal review against approved SRS, Security Architecture, Database Architecture, Frontend/UI Architecture, and AI service integration boundaries. |
-| Backend Architecture | Muhammad Sanish - API Architecture Lead | Pending. Requires API module inventory, backend middleware design, service/repository boundary planning, queue/job planning, and integration contracts. |
-| Master Architecture | Shared architecture leads | Pending. Requires completion or approval of API Architecture and Backend Architecture, plus consolidation of SRS, Security, Database, UI, and AI architecture decisions. |
+| Backend Architecture           | Muhammad Sanish - API Architecture Lead | Pending. Requires API module inventory, backend middleware design, service/repository boundary planning, queue/job planning, and integration contracts.                                                                                        |
+| Master Architecture            | Shared architecture leads               | Pending. Requires completion or approval of API Architecture and Backend Architecture, plus consolidation of SRS, Security, Database, UI, and AI architecture decisions.                                                                       |
 
 ## Dependency Notes
 
@@ -22,4 +22,3 @@ Per project instruction, the following documents were not created:
 - `PROJECT_RISK_REGISTER.md`
 - `PROJECT_READINESS_REPORT.md`
 - `ARCHITECTURE_FREEZE_v1.md`
-

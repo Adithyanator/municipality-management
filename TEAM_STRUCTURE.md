@@ -88,14 +88,14 @@ Responsibilities:
 
 ## Responsibility Matrix
 
-| Name | Role | Primary Deliverables | Review Responsibilities |
-| --- | --- | --- | --- |
-| Minha Palakkathodi | SRS Architecture Lead | SRS folder, requirement traceability, scope updates | Reviews all changes for SRS alignment and scope control |
-| Adithyan N | Security Architecture Lead | Security architecture, RBAC review, risk-management documentation | Reviews authentication, authorization, privacy, audit, biometric, and AI safety controls |
-| Fathima Hana | Database Architecture Lead | Database architecture, schemas, indexes, validation and backup notes | Reviews data model, MongoDB Atlas design, retention, encryption, and data governance |
-| Muhammad Sanish | API Architecture Lead | API architecture, backend module contracts, middleware and integration notes | Reviews API boundaries, validation, error handling, service contracts, and backend security enforcement |
-| Fadi Ahmed | UI/Frontend Architecture Lead | UI architecture, frontend route map, portal and component documentation | Reviews React route protection, portal segregation, navigation, and frontend workflows |
-| Muhammed Sadik KT | AI Architecture Lead | AI architecture, chatbot/RAG notes, face recognition workflow notes | Reviews Gemini integration, guardrails, embeddings, liveness, matching, fallback, and AI auditability |
+| Name               | Role                          | Primary Deliverables                                                         | Review Responsibilities                                                                                 |
+| ------------------ | ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Minha Palakkathodi | SRS Architecture Lead         | SRS folder, requirement traceability, scope updates                          | Reviews all changes for SRS alignment and scope control                                                 |
+| Adithyan N         | Security Architecture Lead    | Security architecture, RBAC review, risk-management documentation            | Reviews authentication, authorization, privacy, audit, biometric, and AI safety controls                |
+| Fathima Hana       | Database Architecture Lead    | Database architecture, schemas, indexes, validation and backup notes         | Reviews data model, MongoDB Atlas design, retention, encryption, and data governance                    |
+| Muhammad Sanish    | API Architecture Lead         | API architecture, backend module contracts, middleware and integration notes | Reviews API boundaries, validation, error handling, service contracts, and backend security enforcement |
+| Fadi Ahmed         | UI/Frontend Architecture Lead | UI architecture, frontend route map, portal and component documentation      | Reviews React route protection, portal segregation, navigation, and frontend workflows                  |
+| Muhammed Sadik KT  | AI Architecture Lead          | AI architecture, chatbot/RAG notes, face recognition workflow notes          | Reviews Gemini integration, guardrails, embeddings, liveness, matching, fallback, and AI auditability   |
 
 ## Collaboration Rules
 

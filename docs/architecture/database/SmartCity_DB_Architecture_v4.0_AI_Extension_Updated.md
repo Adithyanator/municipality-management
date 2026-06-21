@@ -106,15 +106,15 @@ Purpose: Stores municipality knowledge articles, policies, FAQs, procedures, cit
 Indexes:
 
 ```javascript
-db.knowledge_base.createIndex({ title: 1 })
-db.knowledge_base.createIndex({ category: 1 })
-db.knowledge_base.createIndex({ department_id: 1 })
-db.knowledge_base.createIndex({ status: 1 })
-db.knowledge_base.createIndex({ tags: 1 })
-db.knowledge_base.createIndex({ kb_no: 1 }, { unique: true })
-db.knowledge_base.createIndex({ department_id: 1, status: 1, category: 1 })
-db.knowledge_base.createIndex({ status: 1, retrieval_allowed: 1, language: 1 })
-db.knowledge_base.createIndex({ visibility: 1, status: 1 })
+db.knowledge_base.createIndex({ title: 1 });
+db.knowledge_base.createIndex({ category: 1 });
+db.knowledge_base.createIndex({ department_id: 1 });
+db.knowledge_base.createIndex({ status: 1 });
+db.knowledge_base.createIndex({ tags: 1 });
+db.knowledge_base.createIndex({ kb_no: 1 }, { unique: true });
+db.knowledge_base.createIndex({ department_id: 1, status: 1, category: 1 });
+db.knowledge_base.createIndex({ status: 1, retrieval_allowed: 1, language: 1 });
+db.knowledge_base.createIndex({ visibility: 1, status: 1 });
 ```
 
 Design notes:
@@ -148,11 +148,11 @@ Purpose: Stores vector embeddings for Retrieval Augmented Generation.
 Indexes:
 
 ```javascript
-db.kb_embeddings.createIndex({ kb_id: 1 })
-db.kb_embeddings.createIndex({ embedding_model: 1 })
-db.kb_embeddings.createIndex({ kb_id: 1, chunk_index: 1 }, { unique: true })
-db.kb_embeddings.createIndex({ status: 1, embedding_model: 1 })
-db.kb_embeddings.createIndex({ content_hash: 1 })
+db.kb_embeddings.createIndex({ kb_id: 1 });
+db.kb_embeddings.createIndex({ embedding_model: 1 });
+db.kb_embeddings.createIndex({ kb_id: 1, chunk_index: 1 }, { unique: true });
+db.kb_embeddings.createIndex({ status: 1, embedding_model: 1 });
+db.kb_embeddings.createIndex({ content_hash: 1 });
 ```
 
 Vector search:
@@ -194,12 +194,12 @@ Purpose: Stores citizen chatbot conversation sessions for Gemini-backed municipa
 Indexes:
 
 ```javascript
-db.chatbot_sessions.createIndex({ session_no: 1 }, { unique: true })
-db.chatbot_sessions.createIndex({ user_id: 1, started_at: -1 })
-db.chatbot_sessions.createIndex({ status: 1, last_message_at: -1 })
-db.chatbot_sessions.createIndex({ channel: 1, started_at: -1 })
-db.chatbot_sessions.createIndex({ expires_at: 1 }, { expireAfterSeconds: 0 })
-db.chatbot_sessions.createIndex({ correlation_id: 1 })
+db.chatbot_sessions.createIndex({ session_no: 1 }, { unique: true });
+db.chatbot_sessions.createIndex({ user_id: 1, started_at: -1 });
+db.chatbot_sessions.createIndex({ status: 1, last_message_at: -1 });
+db.chatbot_sessions.createIndex({ channel: 1, started_at: -1 });
+db.chatbot_sessions.createIndex({ expires_at: 1 }, { expireAfterSeconds: 0 });
+db.chatbot_sessions.createIndex({ correlation_id: 1 });
 ```
 
 Design notes:
@@ -245,15 +245,15 @@ Purpose: Stores work items requiring municipal human review, including low-confi
 Indexes:
 
 ```javascript
-db.ai_human_review_queue.createIndex({ review_no: 1 }, { unique: true })
-db.ai_human_review_queue.createIndex({ status: 1, priority: 1, created_at: 1 })
-db.ai_human_review_queue.createIndex({ review_type: 1, status: 1, created_at: -1 })
-db.ai_human_review_queue.createIndex({ assigned_to: 1, status: 1, created_at: -1 })
-db.ai_human_review_queue.createIndex({ department_id: 1, status: 1, created_at: -1 })
-db.ai_human_review_queue.createIndex({ session_id: 1 })
-db.ai_human_review_queue.createIndex({ attendance_id: 1 })
-db.ai_human_review_queue.createIndex({ ticket_id: 1 })
-db.ai_human_review_queue.createIndex({ correlation_id: 1 })
+db.ai_human_review_queue.createIndex({ review_no: 1 }, { unique: true });
+db.ai_human_review_queue.createIndex({ status: 1, priority: 1, created_at: 1 });
+db.ai_human_review_queue.createIndex({ review_type: 1, status: 1, created_at: -1 });
+db.ai_human_review_queue.createIndex({ assigned_to: 1, status: 1, created_at: -1 });
+db.ai_human_review_queue.createIndex({ department_id: 1, status: 1, created_at: -1 });
+db.ai_human_review_queue.createIndex({ session_id: 1 });
+db.ai_human_review_queue.createIndex({ attendance_id: 1 });
+db.ai_human_review_queue.createIndex({ ticket_id: 1 });
+db.ai_human_review_queue.createIndex({ correlation_id: 1 });
 ```
 
 Design notes:
@@ -287,11 +287,11 @@ Purpose: Tracks legal consent for facial recognition attendance.
 Indexes:
 
 ```javascript
-db.biometric_consents.createIndex({ staff_id: 1 })
-db.biometric_consents.createIndex({ status: 1 })
-db.biometric_consents.createIndex({ staff_id: 1, status: 1 })
-db.biometric_consents.createIndex({ retention_expires_at: 1 })
-db.biometric_consents.createIndex({ deletion_requested_at: 1, status: 1 })
+db.biometric_consents.createIndex({ staff_id: 1 });
+db.biometric_consents.createIndex({ status: 1 });
+db.biometric_consents.createIndex({ staff_id: 1, status: 1 });
+db.biometric_consents.createIndex({ retention_expires_at: 1 });
+db.biometric_consents.createIndex({ deletion_requested_at: 1, status: 1 });
 ```
 
 Design notes:
@@ -329,12 +329,12 @@ Important restriction: Raw facial images must not be stored in MongoDB or object
 Indexes:
 
 ```javascript
-db.face_templates.createIndex({ staff_id: 1 })
-db.face_templates.createIndex({ status: 1 })
-db.face_templates.createIndex({ staff_id: 1, status: 1 })
-db.face_templates.createIndex({ consent_id: 1 })
-db.face_templates.createIndex({ retention_expires_at: 1 })
-db.face_templates.createIndex({ model_version: 1, status: 1 })
+db.face_templates.createIndex({ staff_id: 1 });
+db.face_templates.createIndex({ status: 1 });
+db.face_templates.createIndex({ staff_id: 1, status: 1 });
+db.face_templates.createIndex({ consent_id: 1 });
+db.face_templates.createIndex({ retention_expires_at: 1 });
+db.face_templates.createIndex({ model_version: 1, status: 1 });
 ```
 
 Security:
@@ -365,10 +365,10 @@ Purpose: Maintains real-time employee presence state for the live attendance das
 Indexes:
 
 ```javascript
-db.staff_presence.createIndex({ staff_id: 1 }, { unique: true })
-db.staff_presence.createIndex({ current_status: 1 })
-db.staff_presence.createIndex({ last_seen_at: -1 })
-db.staff_presence.createIndex({ current_status: 1, last_seen_at: -1 })
+db.staff_presence.createIndex({ staff_id: 1 }, { unique: true });
+db.staff_presence.createIndex({ current_status: 1 });
+db.staff_presence.createIndex({ last_seen_at: -1 });
+db.staff_presence.createIndex({ current_status: 1, last_seen_at: -1 });
 ```
 
 Design notes:
@@ -408,11 +408,11 @@ Purpose: Stores public file, permit, certificate, and application tracking recor
 Indexes:
 
 ```javascript
-db.file_tracking.createIndex({ file_no: 1 }, { unique: true })
-db.file_tracking.createIndex({ applicant_user_id: 1, submitted_at: -1 })
-db.file_tracking.createIndex({ department_id: 1, current_status: 1 })
-db.file_tracking.createIndex({ public_tracking_enabled: 1, file_no: 1 })
-db.file_tracking.createIndex({ related_entity_type: 1, related_entity_id: 1 })
+db.file_tracking.createIndex({ file_no: 1 }, { unique: true });
+db.file_tracking.createIndex({ applicant_user_id: 1, submitted_at: -1 });
+db.file_tracking.createIndex({ department_id: 1, current_status: 1 });
+db.file_tracking.createIndex({ public_tracking_enabled: 1, file_no: 1 });
+db.file_tracking.createIndex({ related_entity_type: 1, related_entity_id: 1 });
 ```
 
 Design notes:
@@ -443,9 +443,9 @@ Purpose: Stores timeline entries, department logs, and public officer comments f
 Indexes:
 
 ```javascript
-db.file_tracking_history.createIndex({ file_tracking_id: 1, changed_at: 1 })
-db.file_tracking_history.createIndex({ department_id: 1, changed_at: -1 })
-db.file_tracking_history.createIndex({ officer_id: 1, changed_at: -1 })
+db.file_tracking_history.createIndex({ file_tracking_id: 1, changed_at: 1 });
+db.file_tracking_history.createIndex({ department_id: 1, changed_at: -1 });
+db.file_tracking_history.createIndex({ officer_id: 1, changed_at: -1 });
 ```
 
 Design notes:
@@ -483,11 +483,11 @@ Purpose: Stores public schemes, permits, certificate guidance, helplines, checkl
 Indexes:
 
 ```javascript
-db.municipal_service_directory.createIndex({ directory_no: 1 }, { unique: true })
-db.municipal_service_directory.createIndex({ item_type: 1, status: 1, display_order: 1 })
-db.municipal_service_directory.createIndex({ department_id: 1, status: 1 })
-db.municipal_service_directory.createIndex({ visibility: 1, status: 1 })
-db.municipal_service_directory.createIndex({ kb_id: 1 })
+db.municipal_service_directory.createIndex({ directory_no: 1 }, { unique: true });
+db.municipal_service_directory.createIndex({ item_type: 1, status: 1, display_order: 1 });
+db.municipal_service_directory.createIndex({ department_id: 1, status: 1 });
+db.municipal_service_directory.createIndex({ visibility: 1, status: 1 });
+db.municipal_service_directory.createIndex({ kb_id: 1 });
 ```
 
 Design notes:
@@ -521,11 +521,11 @@ Purpose: Stores public landing-page announcements, service alerts, scheme highli
 Indexes:
 
 ```javascript
-db.announcements.createIndex({ announcement_no: 1 }, { unique: true })
-db.announcements.createIndex({ audience: 1, status: 1, published_at: -1 })
-db.announcements.createIndex({ department_id: 1, status: 1 })
-db.announcements.createIndex({ ward_id: 1, status: 1 })
-db.announcements.createIndex({ expires_at: 1 })
+db.announcements.createIndex({ announcement_no: 1 }, { unique: true });
+db.announcements.createIndex({ audience: 1, status: 1, published_at: -1 });
+db.announcements.createIndex({ department_id: 1, status: 1 });
+db.announcements.createIndex({ ward_id: 1, status: 1 });
+db.announcements.createIndex({ expires_at: 1 });
 ```
 
 ### password_reset_tokens
@@ -549,10 +549,10 @@ Purpose: Supports the public Password Reset Portal without storing reset state i
 Indexes:
 
 ```javascript
-db.password_reset_tokens.createIndex({ token_hash: 1 }, { unique: true })
-db.password_reset_tokens.createIndex({ user_id: 1, requested_at: -1 })
-db.password_reset_tokens.createIndex({ expires_at: 1 }, { expireAfterSeconds: 0 })
-db.password_reset_tokens.createIndex({ status: 1, expires_at: 1 })
+db.password_reset_tokens.createIndex({ token_hash: 1 }, { unique: true });
+db.password_reset_tokens.createIndex({ user_id: 1, requested_at: -1 });
+db.password_reset_tokens.createIndex({ expires_at: 1 }, { expireAfterSeconds: 0 });
+db.password_reset_tokens.createIndex({ status: 1, expires_at: 1 });
 ```
 
 Security:
@@ -585,11 +585,11 @@ Purpose: Tracks admin CSV/PDF exports and generated reports for attendance analy
 Indexes:
 
 ```javascript
-db.report_exports.createIndex({ export_no: 1 }, { unique: true })
-db.report_exports.createIndex({ requested_by: 1, requested_at: -1 })
-db.report_exports.createIndex({ report_type: 1, requested_at: -1 })
-db.report_exports.createIndex({ status: 1, requested_at: -1 })
-db.report_exports.createIndex({ expires_at: 1 })
+db.report_exports.createIndex({ export_no: 1 }, { unique: true });
+db.report_exports.createIndex({ requested_by: 1, requested_at: -1 });
+db.report_exports.createIndex({ report_type: 1, requested_at: -1 });
+db.report_exports.createIndex({ status: 1, requested_at: -1 });
+db.report_exports.createIndex({ expires_at: 1 });
 ```
 
 Design notes:
@@ -619,9 +619,9 @@ Purpose: Stores non-secret administrator configuration for system settings, secu
 Indexes:
 
 ```javascript
-db.system_settings.createIndex({ setting_key: 1, environment: 1 }, { unique: true })
-db.system_settings.createIndex({ setting_group: 1, status: 1 })
-db.system_settings.createIndex({ updated_at: -1 })
+db.system_settings.createIndex({ setting_key: 1, environment: 1 }, { unique: true });
+db.system_settings.createIndex({ setting_group: 1, status: 1 });
+db.system_settings.createIndex({ updated_at: -1 });
 ```
 
 Security:
@@ -669,13 +669,13 @@ Schema:
 Indexes:
 
 ```javascript
-db.ai_errors.createIndex({ service_name: 1 })
-db.ai_errors.createIndex({ timestamp: -1 })
-db.ai_errors.createIndex({ error_code: 1 })
-db.ai_errors.createIndex({ service_name: 1, timestamp: -1 })
-db.ai_errors.createIndex({ correlation_id: 1 })
-db.ai_errors.createIndex({ error_stage: 1, timestamp: -1 })
-db.ai_errors.createIndex({ fallback_action: 1, timestamp: -1 })
+db.ai_errors.createIndex({ service_name: 1 });
+db.ai_errors.createIndex({ timestamp: -1 });
+db.ai_errors.createIndex({ error_code: 1 });
+db.ai_errors.createIndex({ service_name: 1, timestamp: -1 });
+db.ai_errors.createIndex({ correlation_id: 1 });
+db.ai_errors.createIndex({ error_stage: 1, timestamp: -1 });
+db.ai_errors.createIndex({ fallback_action: 1, timestamp: -1 });
 ```
 
 Design notes:
@@ -734,15 +734,15 @@ Schema:
 Indexes:
 
 ```javascript
-db.ai_audit_logs.createIndex({ user_id: 1 })
-db.ai_audit_logs.createIndex({ timestamp: -1 })
-db.ai_audit_logs.createIndex({ action_type: 1 })
-db.ai_audit_logs.createIndex({ user_id: 1, timestamp: -1 })
-db.ai_audit_logs.createIndex({ action_type: 1, timestamp: -1 })
-db.ai_audit_logs.createIndex({ session_id: 1, timestamp: -1 })
-db.ai_audit_logs.createIndex({ correlation_id: 1 })
-db.ai_audit_logs.createIndex({ operational_entity_type: 1, operational_entity_id: 1 })
-db.ai_audit_logs.createIndex({ policy_decision: 1, timestamp: -1 })
+db.ai_audit_logs.createIndex({ user_id: 1 });
+db.ai_audit_logs.createIndex({ timestamp: -1 });
+db.ai_audit_logs.createIndex({ action_type: 1 });
+db.ai_audit_logs.createIndex({ user_id: 1, timestamp: -1 });
+db.ai_audit_logs.createIndex({ action_type: 1, timestamp: -1 });
+db.ai_audit_logs.createIndex({ session_id: 1, timestamp: -1 });
+db.ai_audit_logs.createIndex({ correlation_id: 1 });
+db.ai_audit_logs.createIndex({ operational_entity_type: 1, operational_entity_id: 1 });
+db.ai_audit_logs.createIndex({ policy_decision: 1, timestamp: -1 });
 ```
 
 Design notes:
@@ -779,10 +779,10 @@ Add these fields where not already present in the baseline schema:
 Updated user indexes:
 
 ```javascript
-db.users.createIndex({ phone: 1 }, { sparse: true })
-db.users.createIndex({ aadhaar_hash: 1 }, { sparse: true, unique: true })
-db.users.createIndex({ employee_code: 1 }, { sparse: true, unique: true })
-db.users.createIndex({ role_id: 1, employment_status: 1 })
+db.users.createIndex({ phone: 1 }, { sparse: true });
+db.users.createIndex({ aadhaar_hash: 1 }, { sparse: true, unique: true });
+db.users.createIndex({ employee_code: 1 }, { sparse: true, unique: true });
+db.users.createIndex({ role_id: 1, employment_status: 1 });
 ```
 
 Design notes:
@@ -816,9 +816,9 @@ Add these fields:
 Updated indexes:
 
 ```javascript
-db.complaint_status_history.createIndex({ complaint_id: 1, changed_at: 1 })
-db.complaint_status_history.createIndex({ changed_by: 1, changed_at: -1 })
-db.complaint_status_history.createIndex({ stage: 1, changed_at: -1 })
+db.complaint_status_history.createIndex({ complaint_id: 1, changed_at: 1 });
+db.complaint_status_history.createIndex({ changed_by: 1, changed_at: -1 });
+db.complaint_status_history.createIndex({ stage: 1, changed_at: -1 });
 ```
 
 Design notes:
@@ -850,9 +850,13 @@ Add these fields:
 Updated indexes:
 
 ```javascript
-db.complaint_assignments.createIndex({ assigned_staff_id: 1, assignment_status: 1, due_at: 1 })
-db.complaint_assignments.createIndex({ assigned_department_id: 1, assignment_status: 1, due_at: 1 })
-db.complaint_assignments.createIndex({ kanban_column: 1, priority: 1, due_at: 1 })
+db.complaint_assignments.createIndex({ assigned_staff_id: 1, assignment_status: 1, due_at: 1 });
+db.complaint_assignments.createIndex({
+  assigned_department_id: 1,
+  assignment_status: 1,
+  due_at: 1,
+});
+db.complaint_assignments.createIndex({ kanban_column: 1, priority: 1, due_at: 1 });
 ```
 
 Design notes:
@@ -884,10 +888,10 @@ Add these fields where not already present:
 Updated indexes:
 
 ```javascript
-db.files.createIndex({ related_entity_type: 1, related_entity_id: 1 })
-db.files.createIndex({ owner_user_id: 1, uploaded_at: -1 })
-db.files.createIndex({ file_role: 1, uploaded_at: -1 })
-db.files.createIndex({ checksum: 1 })
+db.files.createIndex({ related_entity_type: 1, related_entity_id: 1 });
+db.files.createIndex({ owner_user_id: 1, uploaded_at: -1 });
+db.files.createIndex({ file_role: 1, uploaded_at: -1 });
+db.files.createIndex({ checksum: 1 });
 ```
 
 Design notes:
@@ -945,18 +949,18 @@ Example:
 Updated attendance indexes:
 
 ```javascript
-db.attendance.createIndex({ "metadata.staff_id": 1, punch_time: -1 })
-db.attendance.createIndex({ "metadata.department_id": 1, punch_time: -1 })
-db.attendance.createIndex({ "metadata.device_id": 1, punch_time: -1 })
-db.attendance.createIndex({ review_status: 1, punch_time: -1 })
-db.attendance.createIndex({ verification_method: 1, punch_time: -1 })
-db.attendance.createIndex({ confidence_decision: 1, punch_time: -1 })
-db.attendance.createIndex({ template_id: 1 })
-db.attendance.createIndex({ consent_id: 1 })
-db.attendance.createIndex({ correlation_id: 1 })
-db.attendance.createIndex({ capture_location: "2dsphere" })
-db.attendance.createIndex({ shift_id: 1, punch_time: -1 })
-db.attendance.createIndex({ late_flag: 1, punch_time: -1 })
+db.attendance.createIndex({ 'metadata.staff_id': 1, punch_time: -1 });
+db.attendance.createIndex({ 'metadata.department_id': 1, punch_time: -1 });
+db.attendance.createIndex({ 'metadata.device_id': 1, punch_time: -1 });
+db.attendance.createIndex({ review_status: 1, punch_time: -1 });
+db.attendance.createIndex({ verification_method: 1, punch_time: -1 });
+db.attendance.createIndex({ confidence_decision: 1, punch_time: -1 });
+db.attendance.createIndex({ template_id: 1 });
+db.attendance.createIndex({ consent_id: 1 });
+db.attendance.createIndex({ correlation_id: 1 });
+db.attendance.createIndex({ capture_location: '2dsphere' });
+db.attendance.createIndex({ shift_id: 1, punch_time: -1 });
+db.attendance.createIndex({ late_flag: 1, punch_time: -1 });
 ```
 
 Design notes:
@@ -1006,14 +1010,14 @@ Add these fields to support chatbot-created tickets and escalations:
 Updated complaint indexes:
 
 ```javascript
-db.complaints.createIndex({ source_channel: 1, created_at: -1 })
-db.complaints.createIndex({ chatbot_session_id: 1 })
-db.complaints.createIndex({ human_support_required: 1, status: 1, created_at: -1 })
-db.complaints.createIndex({ correlation_id: 1 })
-db.complaints.createIndex({ location: "2dsphere" })
-db.complaints.createIndex({ status: 1, sla_due_at: 1 })
-db.complaints.createIndex({ priority: 1, status: 1, created_at: -1 })
-db.complaints.createIndex({ assigned_staff_id: 1, status: 1, sla_due_at: 1 })
+db.complaints.createIndex({ source_channel: 1, created_at: -1 });
+db.complaints.createIndex({ chatbot_session_id: 1 });
+db.complaints.createIndex({ human_support_required: 1, status: 1, created_at: -1 });
+db.complaints.createIndex({ correlation_id: 1 });
+db.complaints.createIndex({ location: '2dsphere' });
+db.complaints.createIndex({ status: 1, sla_due_at: 1 });
+db.complaints.createIndex({ priority: 1, status: 1, created_at: -1 });
+db.complaints.createIndex({ assigned_staff_id: 1, status: 1, sla_due_at: 1 });
 ```
 
 Design notes:
@@ -1071,13 +1075,13 @@ Example:
 Recommended indexes:
 
 ```javascript
-db.chatbot_messages.createIndex({ session_id: 1, created_at: 1 })
-db.chatbot_messages.createIndex({ ai_model: 1, created_at: -1 })
-db.chatbot_messages.createIndex({ escalation_triggered: 1, created_at: -1 })
-db.chatbot_messages.createIndex({ safety_flag: 1, created_at: -1 })
-db.chatbot_messages.createIndex({ ticket_id: 1 })
-db.chatbot_messages.createIndex({ correlation_id: 1 })
-db.chatbot_messages.createIndex({ expires_at: 1 }, { expireAfterSeconds: 0 })
+db.chatbot_messages.createIndex({ session_id: 1, created_at: 1 });
+db.chatbot_messages.createIndex({ ai_model: 1, created_at: -1 });
+db.chatbot_messages.createIndex({ escalation_triggered: 1, created_at: -1 });
+db.chatbot_messages.createIndex({ safety_flag: 1, created_at: -1 });
+db.chatbot_messages.createIndex({ ticket_id: 1 });
+db.chatbot_messages.createIndex({ correlation_id: 1 });
+db.chatbot_messages.createIndex({ expires_at: 1 }, { expireAfterSeconds: 0 });
 ```
 
 Design notes:
@@ -1119,12 +1123,12 @@ Example:
 Updated notification indexes:
 
 ```javascript
-db.notifications.createIndex({ "metadata.user_id": 1, sent_at: -1 })
-db.notifications.createIndex({ "metadata.channel": 1, sent_at: -1 })
-db.notifications.createIndex({ source_system: 1, sent_at: -1 })
-db.notifications.createIndex({ event_type: 1, sent_at: -1 })
-db.notifications.createIndex({ review_queue_id: 1 })
-db.notifications.createIndex({ correlation_id: 1 })
+db.notifications.createIndex({ 'metadata.user_id': 1, sent_at: -1 });
+db.notifications.createIndex({ 'metadata.channel': 1, sent_at: -1 });
+db.notifications.createIndex({ source_system: 1, sent_at: -1 });
+db.notifications.createIndex({ event_type: 1, sent_at: -1 });
+db.notifications.createIndex({ review_queue_id: 1 });
+db.notifications.createIndex({ correlation_id: 1 });
 ```
 
 Design notes:
@@ -1380,11 +1384,11 @@ Recommended validators:
 
 ## 10. Collection Count Summary
 
-| Category | Count |
-| --- | ---: |
-| Existing collections preserved | 26 |
-| New AI/frontend/SRS collections added | 16 |
-| Total collections after modification | 42 |
+| Category                              | Count |
+| ------------------------------------- | ----: |
+| Existing collections preserved        |    26 |
+| New AI/frontend/SRS collections added |    16 |
+| Total collections after modification  |    42 |
 
 New AI collections:
 
@@ -1445,37 +1449,37 @@ New AI collections:
 
 ## 13. AI Requirement Coverage and Database Change Summary
 
-| AI requirement | Existing database support | Required database change | Reason for change | Source document reference |
-| --- | --- | --- | --- | --- |
-| Gemini chatbot integration through backend AI Gateway | Partial: `chatbot_messages`, `ai_audit_logs`, and `ai_errors` existed in the extension. | Added `chatbot_sessions`; expanded `chatbot_messages`, `ai_audit_logs`, and `ai_errors` with prompt version, guardrail version, correlation ID, policy decision, fallback action, and redaction fields. | The database must preserve backend-mediated Gemini traceability without allowing direct model writes. | `AI_Architecture_Final_Submission.pdf`, Sections 3, 5, 6, and 10. |
-| RAG / approved knowledge base retrieval | Partial: `knowledge_base` and `kb_embeddings` existed. | Added `retrieval_allowed`, `visibility`, approval metadata, embedding `status`, `content_hash`, and retrieval source IDs in message/audit records. | Gemini responses must use approved municipal content and retrieval allowlists with auditable source traceability. | PDF Sections 3, 6, 7, and Risk Mitigation Matrix. |
-| Chatbot sessions and redacted messages | Weak: relationship referenced `chatbot_sessions`, but no schema existed. | Added `chatbot_sessions` schema, TTL-capable `expires_at`, session status, channel, language, escalation, ticket link, and correlation metadata. | The AI document explicitly requires `chat_sessions` and `chat_messages` for metadata, transcripts, language, intent, AI metadata, and safety flags. | PDF Section 7 and Data Retention Policy. |
-| Ticket creation and escalation | Partial: existing `complaints` collection supported complaint workflow, but not chatbot ticket provenance. | Kept `complaints` as the ticket collection and added chatbot source fields, session/message links, confidence, escalation reason, human support flag, and indexes. | Preserves legacy architecture while supporting the PDF ticket service and human support queue flow. | PDF Sections 3, 7, and 10. |
-| Human review workflows and notifications | Partial: `notifications` existed; attendance review fields existed. | Added `ai_human_review_queue`; expanded notifications with severity, review queue link, audit link, and correlation ID. | Human review queues are required for sensitive chatbot issues, low-confidence biometrics, failed liveness checks, and exceptions. | PDF Sections 4, 8, and 10. |
-| Face recognition attendance with liveness | Partial: `attendance`, `face_templates`, and `biometric_consents` existed; `liveness_score` existed. | Added `face_match_score`, `liveness_result`, `confidence_decision`, `template_id`, `consent_id`, fallback fields, and review indexes to `attendance`. | The face flow requires liveness, embedding match, confidence decision, and attendance/manual fallback traceability. | PDF Section 4 and Face Recognition Flowchart. |
-| Encrypted face templates, no raw photos | Mostly supported: encrypted templates and no raw images were stated. | Added `consent_id`, `encryption_key_id`, template versioning, retention expiry, deletion metadata, and employment/consent cleanup rules. | The PDF requires encrypted templates, no raw photos after enrollment, and deletion when consent is withdrawn or employment ends. | PDF Sections 4, 6, 7, and Consent & Retention Policy. |
-| Biometric consent and revocation | Partial: consent fields existed. | Added consent source, policy version, revoked by, deletion request/completion, retention expiry, and validation rules. | Explicit permission, revocation, deletion request, and consent lifecycle must be provable. | PDF Sections 4, 6, and Consent Form / Consent Policy. |
-| Manual attendance fallback and PIN/manual review fallback | Partial: `verification_method` supported manual values. | Added `manual_fallback_used`, `fallback_reason`, `fallback_action`, `ai_human_review_queue` review types, and AI error fallback actions. | Manual attendance must always remain available for low confidence, failed liveness, mismatch, outages, or consent absence. | PDF Sections 4, 8, Risk Mitigation Matrix, and Consent & Retention Policy. |
-| Confidence-based review | Partial: `confidence_score` and `review_status` existed. | Added bounded confidence validation, `confidence_decision`, review queue confidence/liveness fields, and notification/audit links. | Low-confidence answers and biometric matches must route to human review and remain auditable. | PDF Sections 3, 4, 7, 8, and 10. |
-| AI audit logs | Partial: basic `ai_audit_logs` existed. | Expanded audit fields for service, policy decision, safety flag, retrieval source IDs, tool validation, operational entity, reviewer, fallback, redaction, and correlation. | The PDF requires auditing model-assisted actions, biometric actions, policy decisions, fallback actions, and reviewer data. | PDF Sections 4, 6, 7, and 8. |
-| AI error logs and reliability | Partial: `ai_errors` stored basic errors and retries. | Added error stage, correlation ID, transient flag, provider status, circuit breaker state, fallback action, and redaction flag. | The PDF requires normalized errors, retries with backoff, circuit breakers, safe messages, queue retries, and no exposure of internals. | PDF Section 8 and Integration Architecture. |
-| Security, privacy, and governance | Partial: RBAC, encryption, audit, and FLE were already included. | Added retrieval allowlists, tool-call validation, direct-model-write prohibition, redaction requirements, secrets-manager note, and sensitive-data non-exposure rules. | The PDF requires least privilege, prompt injection defenses, structured outputs, tool validation, output filtering, PII minimization, and immutable audit trails. | PDF Sections 1, 5, 6, and 8. |
-| Retention requirements | Partial: biometric cleanup was mentioned. | Added six-month chat retention with `expires_at`, face-template deletion triggers, raw-image non-retention, and AI log retention guidance. | The PDF states chat logs are retained for six months, attendance follows municipality rules, templates are deleted on consent withdrawal/employment end, and raw face images are not stored after enrollment. | PDF Data Retention Policy and Consent & Retention Policy. |
-| Notifications and asynchronous operations | Partial: notifications existed; background workers were mentioned. | Added notification links to review/audit records and migration tasks for review queue creation, cleanup jobs, and chatbot ticket routing. | The PDF requires queues for notifications, audit exports, analytics, retries, and human review notifications. | PDF Sections 5, 8, and 10. |
+| AI requirement                                            | Existing database support                                                                                  | Required database change                                                                                                                                                                                | Reason for change                                                                                                                                                                                             | Source document reference                                                  |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Gemini chatbot integration through backend AI Gateway     | Partial: `chatbot_messages`, `ai_audit_logs`, and `ai_errors` existed in the extension.                    | Added `chatbot_sessions`; expanded `chatbot_messages`, `ai_audit_logs`, and `ai_errors` with prompt version, guardrail version, correlation ID, policy decision, fallback action, and redaction fields. | The database must preserve backend-mediated Gemini traceability without allowing direct model writes.                                                                                                         | `AI_Architecture_Final_Submission.pdf`, Sections 3, 5, 6, and 10.          |
+| RAG / approved knowledge base retrieval                   | Partial: `knowledge_base` and `kb_embeddings` existed.                                                     | Added `retrieval_allowed`, `visibility`, approval metadata, embedding `status`, `content_hash`, and retrieval source IDs in message/audit records.                                                      | Gemini responses must use approved municipal content and retrieval allowlists with auditable source traceability.                                                                                             | PDF Sections 3, 6, 7, and Risk Mitigation Matrix.                          |
+| Chatbot sessions and redacted messages                    | Weak: relationship referenced `chatbot_sessions`, but no schema existed.                                   | Added `chatbot_sessions` schema, TTL-capable `expires_at`, session status, channel, language, escalation, ticket link, and correlation metadata.                                                        | The AI document explicitly requires `chat_sessions` and `chat_messages` for metadata, transcripts, language, intent, AI metadata, and safety flags.                                                           | PDF Section 7 and Data Retention Policy.                                   |
+| Ticket creation and escalation                            | Partial: existing `complaints` collection supported complaint workflow, but not chatbot ticket provenance. | Kept `complaints` as the ticket collection and added chatbot source fields, session/message links, confidence, escalation reason, human support flag, and indexes.                                      | Preserves legacy architecture while supporting the PDF ticket service and human support queue flow.                                                                                                           | PDF Sections 3, 7, and 10.                                                 |
+| Human review workflows and notifications                  | Partial: `notifications` existed; attendance review fields existed.                                        | Added `ai_human_review_queue`; expanded notifications with severity, review queue link, audit link, and correlation ID.                                                                                 | Human review queues are required for sensitive chatbot issues, low-confidence biometrics, failed liveness checks, and exceptions.                                                                             | PDF Sections 4, 8, and 10.                                                 |
+| Face recognition attendance with liveness                 | Partial: `attendance`, `face_templates`, and `biometric_consents` existed; `liveness_score` existed.       | Added `face_match_score`, `liveness_result`, `confidence_decision`, `template_id`, `consent_id`, fallback fields, and review indexes to `attendance`.                                                   | The face flow requires liveness, embedding match, confidence decision, and attendance/manual fallback traceability.                                                                                           | PDF Section 4 and Face Recognition Flowchart.                              |
+| Encrypted face templates, no raw photos                   | Mostly supported: encrypted templates and no raw images were stated.                                       | Added `consent_id`, `encryption_key_id`, template versioning, retention expiry, deletion metadata, and employment/consent cleanup rules.                                                                | The PDF requires encrypted templates, no raw photos after enrollment, and deletion when consent is withdrawn or employment ends.                                                                              | PDF Sections 4, 6, 7, and Consent & Retention Policy.                      |
+| Biometric consent and revocation                          | Partial: consent fields existed.                                                                           | Added consent source, policy version, revoked by, deletion request/completion, retention expiry, and validation rules.                                                                                  | Explicit permission, revocation, deletion request, and consent lifecycle must be provable.                                                                                                                    | PDF Sections 4, 6, and Consent Form / Consent Policy.                      |
+| Manual attendance fallback and PIN/manual review fallback | Partial: `verification_method` supported manual values.                                                    | Added `manual_fallback_used`, `fallback_reason`, `fallback_action`, `ai_human_review_queue` review types, and AI error fallback actions.                                                                | Manual attendance must always remain available for low confidence, failed liveness, mismatch, outages, or consent absence.                                                                                    | PDF Sections 4, 8, Risk Mitigation Matrix, and Consent & Retention Policy. |
+| Confidence-based review                                   | Partial: `confidence_score` and `review_status` existed.                                                   | Added bounded confidence validation, `confidence_decision`, review queue confidence/liveness fields, and notification/audit links.                                                                      | Low-confidence answers and biometric matches must route to human review and remain auditable.                                                                                                                 | PDF Sections 3, 4, 7, 8, and 10.                                           |
+| AI audit logs                                             | Partial: basic `ai_audit_logs` existed.                                                                    | Expanded audit fields for service, policy decision, safety flag, retrieval source IDs, tool validation, operational entity, reviewer, fallback, redaction, and correlation.                             | The PDF requires auditing model-assisted actions, biometric actions, policy decisions, fallback actions, and reviewer data.                                                                                   | PDF Sections 4, 6, 7, and 8.                                               |
+| AI error logs and reliability                             | Partial: `ai_errors` stored basic errors and retries.                                                      | Added error stage, correlation ID, transient flag, provider status, circuit breaker state, fallback action, and redaction flag.                                                                         | The PDF requires normalized errors, retries with backoff, circuit breakers, safe messages, queue retries, and no exposure of internals.                                                                       | PDF Section 8 and Integration Architecture.                                |
+| Security, privacy, and governance                         | Partial: RBAC, encryption, audit, and FLE were already included.                                           | Added retrieval allowlists, tool-call validation, direct-model-write prohibition, redaction requirements, secrets-manager note, and sensitive-data non-exposure rules.                                  | The PDF requires least privilege, prompt injection defenses, structured outputs, tool validation, output filtering, PII minimization, and immutable audit trails.                                             | PDF Sections 1, 5, 6, and 8.                                               |
+| Retention requirements                                    | Partial: biometric cleanup was mentioned.                                                                  | Added six-month chat retention with `expires_at`, face-template deletion triggers, raw-image non-retention, and AI log retention guidance.                                                              | The PDF states chat logs are retained for six months, attendance follows municipality rules, templates are deleted on consent withdrawal/employment end, and raw face images are not stored after enrollment. | PDF Data Retention Policy and Consent & Retention Policy.                  |
+| Notifications and asynchronous operations                 | Partial: notifications existed; background workers were mentioned.                                         | Added notification links to review/audit records and migration tasks for review queue creation, cleanup jobs, and chatbot ticket routing.                                                               | The PDF requires queues for notifications, audit exports, analytics, retries, and human review notifications.                                                                                                 | PDF Sections 5, 8, and 10.                                                 |
 
 ## 14. Frontend and SRS Requirement Coverage Summary
 
-| Requirement area | Existing database support | Required database change | Reason for change | Source document reference |
-| --- | --- | --- | --- | --- |
-| Public Landing Page announcements, schemes, permits, and helplines | Partial: `knowledge_base`, `files`, and certificate collections could hold some content but lacked public directory structure. | Added `announcements` and `municipal_service_directory` with public visibility, status, document links, department ownership, and display ordering. | The frontend requires landing content, Schemes Directory, Permit Directory, helplines, checklists, and downloads. | `Frontend_Architecture_Final_Merged.pdf`, Sections 3.1, 3.2, and 6.1.1; SRS Project Scope and File Tracking/Feature sections. |
-| Public File Tracker | Missing as an explicit public tracking model. | Added `file_tracking` and `file_tracking_history` with public tracking flags, timelines, department logs, public notes, and related-entity links. | The frontend explicitly states that the API queries a `fileTracking` collection and displays processing timeline and public officer comments. | Frontend Sections 3.1 and 5.5; SRS Feature 3 and DFD/API sections. |
-| Password Reset Portal | Partial: `auth_sessions` existed, but reset-token lifecycle was not defined. | Added `password_reset_tokens` with token hashes, TTL expiry, status, request metadata, and audit requirement. | Password reset needs secure one-time token storage without raw token persistence. | Frontend `PUB-04`; SRS Functional Requirements and Authentication. |
-| Citizen registration, profile, Aadhaar duplicate check, notification configuration | Partial: `users`, `citizen_addresses`, and `user_notification_preferences` existed. | Added `users.phone`, `aadhaar_hash`, profile/photo/language fields, and staff employment fields. | Frontend registration requires email/phone/Aadhaar uniqueness, ward address, profile editing, and notification settings. | Frontend Sections 5.1 and CIT-08; SRS User Authentication/Profile sections. |
-| Complaint intake with GPS, photo attachments, SLA receipt, citizen timeline, feedback lock | Partial: `complaints`, `files`, `complaint_status_history`, `feedback`, and `sla_policies` existed. | Added complaint title/priority/location/attachments/SLA due/proof/completion/feedback lock fields; added status-history public/officer/internal notes and proof links. | Frontend complaint flow requires GPS, proof photos, reference IDs, SLAs, detail tracker, officer updates, resolution photos, and closing after feedback. | Frontend Sections 5.3, 5.4, 5.7, 6.1.5-6.1.7; SRS Complaint, Feedback, and Database sections. |
-| Staff Kanban, assigned worklist, resolution console | Partial: `complaint_assignments` and `complaint_status_history` existed. | Added assignment status, Kanban column, priority, department/staff assignment, timestamps, due date, and indexes. | Staff portal requires Assigned/In Progress/Resolved columns, start work, upload proof, completion notes, and workload dashboards. | Frontend Sections STF-03/STF-04 and Flow 9; SRS Staff role and Complaint Management. |
-| Face attendance scanner with webcam GPS and late flags | Partial: AI attendance fields existed. | Added attendance `device_id`, `capture_location`, `location_verified`, `shift_id`, and `late_flag`. | Frontend scanner verifies municipal location, logs clock-in timestamps, and displays monthly late flags. | Frontend Sections STF-02/STF-05 and Flow 10; SRS Attendance and Face Recognition. |
-| Admin dashboards, global ledger, attendance analytics, CSV/PDF reports | Partial: source operational data existed, but export audit was not defined. | Added `report_exports` with report type, filters, format, status, output file link, row count, and expiry. | Admin exports can expose bulk records and need auditability, generated-file tracking, and failure handling. | Frontend ADM-04/ADM-05 and Flow 12; SRS Analytics, Reports, and API sections. |
-| Security and system settings | Partial: RBAC/security controls existed; setting persistence was not defined. | Added `system_settings` for non-secret configuration and secret-manager references only. | Admin settings configure shift times, API key references, backups, feature flags, and security options. | Frontend ADM-06; AI Architecture Security/Secrets; SRS Non-Functional Requirements. |
-| File uploads and downloadable documents | Partial: `files` existed but frontend-specific roles were not documented. | Extended `files` with file role, owner, related entity, storage key, MIME type, checksum, public access, and indexes. | Complaint attachments, proof photos, receipts, report exports, directory downloads, and profile photos need common metadata and access control. | Frontend Complaint, Resolution, Directory, Reports, and Profile workflows; SRS Database/API sections. |
+| Requirement area                                                                           | Existing database support                                                                                                      | Required database change                                                                                                                                               | Reason for change                                                                                                                                        | Source document reference                                                                                                     |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Public Landing Page announcements, schemes, permits, and helplines                         | Partial: `knowledge_base`, `files`, and certificate collections could hold some content but lacked public directory structure. | Added `announcements` and `municipal_service_directory` with public visibility, status, document links, department ownership, and display ordering.                    | The frontend requires landing content, Schemes Directory, Permit Directory, helplines, checklists, and downloads.                                        | `Frontend_Architecture_Final_Merged.pdf`, Sections 3.1, 3.2, and 6.1.1; SRS Project Scope and File Tracking/Feature sections. |
+| Public File Tracker                                                                        | Missing as an explicit public tracking model.                                                                                  | Added `file_tracking` and `file_tracking_history` with public tracking flags, timelines, department logs, public notes, and related-entity links.                      | The frontend explicitly states that the API queries a `fileTracking` collection and displays processing timeline and public officer comments.            | Frontend Sections 3.1 and 5.5; SRS Feature 3 and DFD/API sections.                                                            |
+| Password Reset Portal                                                                      | Partial: `auth_sessions` existed, but reset-token lifecycle was not defined.                                                   | Added `password_reset_tokens` with token hashes, TTL expiry, status, request metadata, and audit requirement.                                                          | Password reset needs secure one-time token storage without raw token persistence.                                                                        | Frontend `PUB-04`; SRS Functional Requirements and Authentication.                                                            |
+| Citizen registration, profile, Aadhaar duplicate check, notification configuration         | Partial: `users`, `citizen_addresses`, and `user_notification_preferences` existed.                                            | Added `users.phone`, `aadhaar_hash`, profile/photo/language fields, and staff employment fields.                                                                       | Frontend registration requires email/phone/Aadhaar uniqueness, ward address, profile editing, and notification settings.                                 | Frontend Sections 5.1 and CIT-08; SRS User Authentication/Profile sections.                                                   |
+| Complaint intake with GPS, photo attachments, SLA receipt, citizen timeline, feedback lock | Partial: `complaints`, `files`, `complaint_status_history`, `feedback`, and `sla_policies` existed.                            | Added complaint title/priority/location/attachments/SLA due/proof/completion/feedback lock fields; added status-history public/officer/internal notes and proof links. | Frontend complaint flow requires GPS, proof photos, reference IDs, SLAs, detail tracker, officer updates, resolution photos, and closing after feedback. | Frontend Sections 5.3, 5.4, 5.7, 6.1.5-6.1.7; SRS Complaint, Feedback, and Database sections.                                 |
+| Staff Kanban, assigned worklist, resolution console                                        | Partial: `complaint_assignments` and `complaint_status_history` existed.                                                       | Added assignment status, Kanban column, priority, department/staff assignment, timestamps, due date, and indexes.                                                      | Staff portal requires Assigned/In Progress/Resolved columns, start work, upload proof, completion notes, and workload dashboards.                        | Frontend Sections STF-03/STF-04 and Flow 9; SRS Staff role and Complaint Management.                                          |
+| Face attendance scanner with webcam GPS and late flags                                     | Partial: AI attendance fields existed.                                                                                         | Added attendance `device_id`, `capture_location`, `location_verified`, `shift_id`, and `late_flag`.                                                                    | Frontend scanner verifies municipal location, logs clock-in timestamps, and displays monthly late flags.                                                 | Frontend Sections STF-02/STF-05 and Flow 10; SRS Attendance and Face Recognition.                                             |
+| Admin dashboards, global ledger, attendance analytics, CSV/PDF reports                     | Partial: source operational data existed, but export audit was not defined.                                                    | Added `report_exports` with report type, filters, format, status, output file link, row count, and expiry.                                                             | Admin exports can expose bulk records and need auditability, generated-file tracking, and failure handling.                                              | Frontend ADM-04/ADM-05 and Flow 12; SRS Analytics, Reports, and API sections.                                                 |
+| Security and system settings                                                               | Partial: RBAC/security controls existed; setting persistence was not defined.                                                  | Added `system_settings` for non-secret configuration and secret-manager references only.                                                                               | Admin settings configure shift times, API key references, backups, feature flags, and security options.                                                  | Frontend ADM-06; AI Architecture Security/Secrets; SRS Non-Functional Requirements.                                           |
+| File uploads and downloadable documents                                                    | Partial: `files` existed but frontend-specific roles were not documented.                                                      | Extended `files` with file role, owner, related entity, storage key, MIME type, checksum, public access, and indexes.                                                  | Complaint attachments, proof photos, receipts, report exports, directory downloads, and profile photos need common metadata and access control.          | Frontend Complaint, Resolution, Directory, Reports, and Profile workflows; SRS Database/API sections.                         |
 
 Final assessment: with the additions in this v4.0 corrected version, the MongoDB architecture supports the AI architecture, frontend architecture, and SRS requirements for Gemini chatbot, RAG, ticketing, file tracking, public directories, complaint workflows, staff worklists, face attendance, liveness, consent, fallback, audit, error handling, security, retention, notification, reporting, settings, and human review while preserving existing collections and backward compatibility.

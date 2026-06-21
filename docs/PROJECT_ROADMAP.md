@@ -6,14 +6,14 @@ This roadmap defines the documentation-first project progression for the AI-Powe
 
 ## Architecture Leads
 
-| Name | Role | Primary Deliverables | Review Responsibilities |
-| --- | --- | --- | --- |
-| Minha Palakkathodi | SRS Architecture Lead | SRS folder, requirement traceability, scope updates | Reviews roadmap items for SRS alignment and scope control |
-| Adithyan N | Security Architecture Lead | Security architecture, RBAC review, risk-management documentation | Reviews security, privacy, audit, biometric, and AI safety roadmap items |
-| Fathima Hana | Database Architecture Lead | Database architecture, schemas, indexes, validation and backup notes | Reviews data model, MongoDB Atlas, retention, encryption, and data governance roadmap items |
-| Muhammad Sanish | API Architecture Lead | API architecture, backend module contracts, middleware and integration notes | Reviews API, backend, validation, error handling, and integration roadmap items |
-| Fadi Ahmed | UI/Frontend Architecture Lead | UI architecture, frontend route map, portal and component documentation | Reviews UI, route protection, portal segregation, and frontend workflow roadmap items |
-| Muhammed Sadik KT | AI Architecture Lead | AI architecture, chatbot/RAG notes, face recognition workflow notes | Reviews Gemini, RAG, guardrail, liveness, matching, fallback, and AI audit roadmap items |
+| Name               | Role                          | Primary Deliverables                                                         | Review Responsibilities                                                                     |
+| ------------------ | ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Minha Palakkathodi | SRS Architecture Lead         | SRS folder, requirement traceability, scope updates                          | Reviews roadmap items for SRS alignment and scope control                                   |
+| Adithyan N         | Security Architecture Lead    | Security architecture, RBAC review, risk-management documentation            | Reviews security, privacy, audit, biometric, and AI safety roadmap items                    |
+| Fathima Hana       | Database Architecture Lead    | Database architecture, schemas, indexes, validation and backup notes         | Reviews data model, MongoDB Atlas, retention, encryption, and data governance roadmap items |
+| Muhammad Sanish    | API Architecture Lead         | API architecture, backend module contracts, middleware and integration notes | Reviews API, backend, validation, error handling, and integration roadmap items             |
+| Fadi Ahmed         | UI/Frontend Architecture Lead | UI architecture, frontend route map, portal and component documentation      | Reviews UI, route protection, portal segregation, and frontend workflow roadmap items       |
+| Muhammed Sadik KT  | AI Architecture Lead          | AI architecture, chatbot/RAG notes, face recognition workflow notes          | Reviews Gemini, RAG, guardrail, liveness, matching, fallback, and AI audit roadmap items    |
 
 ## Phase 1 - Repository and Architecture Foundation
 

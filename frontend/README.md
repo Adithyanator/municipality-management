@@ -3,6 +3,7 @@
 React application frontend for the AI-Powered Smart Municipal Citizen Assistance and Staff Attendance Management System.
 
 ## Structure
+
 - `src/components`: Reusable UI components.
 - `src/pages`: Router page targets.
 - `src/layouts`: Layout containers (e.g. dashboard sidebar, public wrapper).

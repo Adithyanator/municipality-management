@@ -28,4 +28,3 @@ git add .
 git commit -m "Describe the feature change"
 git push origin feature/frontend
 ```
-

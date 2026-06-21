@@ -4,6 +4,7 @@ const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
 const importPlugin = require('eslint-plugin-import');
+const eslintConfigPrettier = require('eslint-config-prettier');
 
 module.exports = [
   // Global ignores
@@ -47,8 +48,8 @@ module.exports = [
       'no-undef': 'error',
       'no-console': 'warn',
       'prefer-const': 'error',
-      'eqeqeq': ['error', 'always'],
-      'curly': ['error', 'all'],
+      eqeqeq: ['error', 'always'],
+      curly: ['error', 'all'],
       'no-var': 'error',
       'no-empty': 'error',
       'no-unreachable': 'error',
@@ -100,4 +101,5 @@ module.exports = [
       'jsx-a11y/alt-text': 'warn',
     },
   },
+  eslintConfigPrettier,
 ];
