@@ -11,6 +11,17 @@
     "backend:dev": "npm run dev --workspace=kottakkal-backend",
     "frontend:build": "npm run build --workspace=kottakkal-frontend",
     "backend:start": "npm run start --workspace=kottakkal-backend",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:frontend": "eslint frontend",
+    "lint:backend": "eslint backend"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.6.0"
   }
 }
